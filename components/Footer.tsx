@@ -41,9 +41,10 @@ export default function Footer() {
                 <Image
                   src="/images/logo.png"
                   alt="Logo Ciro Neves"
-                  width={300}
-                  height={90}
-                  className="w-48 md:w-56 h-auto object-contain"
+                  width={320}
+                  height={96}
+                  className="h-16 md:h-24 w-auto object-contain transition-transform hover:scale-105"
+                  priority
                 />
               </Link>
 
@@ -106,7 +107,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone size={16} className="text-cyan-400 flex-shrink-0" />
-                  <span className="text-white/70 text-sm">(11) 99999-9999</span>
+                  <span className="text-white/70 text-sm">(11) 99999-9999)</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin size={16} className="text-cyan-400 flex-shrink-0" />

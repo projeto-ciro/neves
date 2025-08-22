@@ -1,150 +1,159 @@
 "use client";
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
-
-  const menuItems = [
-    { label: "Início", href: "/#inicio" },
-    { label: "Sobre", href: "/#sobre" },
-    { label: "Programa", href: "/#programa" },
-    { label: "Depoimentos", href: "/#depoimentos" },
-    { label: "Calculadoras", href: "/calculadoras" },
-    { label: "Contato", href: "/#contato" },
-  ];
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          {/* Logo clicável */}
-          <Link href="/" className="touch-target" aria-label="Ir para página inicial">
-            <Image
-              src="/images/logo.png"
-              alt="Ciro Neves Logo"
-              width={320}
-              height={96}
-              className="h-12 md:h-16 w-auto transition-transform hover:scale-105"
-              priority
-            />
-          </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5 flex justify-between items-center">
+        {/* Logo Desktop */}
+        <Link href="/" className="flex items-center space-x-2">
+          <Image
+            src="/images/logo.png"
+            alt="Ciro Neves Logo"
+            width={320}
+            height={96}
+            className="h-16 md:h-24 w-auto transition-transform hover:scale-105"
+            priority
+          />
+        </Link>
 
-          {/* Menu Hambúrguer */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleMenu}
-            className="text-white hover:text-cyan-400 hover:bg-white/10 lg:hidden touch-target"
-            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+        {/* Menu Desktop */}
+        <nav className="hidden md:flex space-x-8">
+          <Link
+            href="/"
+            className="text-white/80 hover:text-white transition-colors"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </Button>
+            Início
+          </Link>
+          <Link
+            href="#sobre"
+            className="text-white/80 hover:text-white transition-colors"
+          >
+            Sobre
+          </Link>
+          <Link
+            href="#programa"
+            className="text-white/80 hover:text-white transition-colors"
+          >
+            Programa
+          </Link>
+          <Link
+            href="#depoimentos"
+            className="text-white/80 hover:text-white transition-colors"
+          >
+            Depoimentos
+          </Link>
+          <Link
+            href="#calculadoras"
+            className="text-white/80 hover:text-white transition-colors"
+          >
+            Calculadoras
+          </Link>
+          <Link
+            href="#contato"
+            className="text-white/80 hover:text-white transition-colors"
+          >
+            Contato
+          </Link>
+        </nav>
 
-          {/* Menu Desktop */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {menuItems.map((item, index) => (
-              <motion.a
-                key={item.href + index}
-                href={item.href}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.05 * index }}
-                className="text-white/80 hover:text-cyan-400 transition-colors link-underline touch-target flex items-center"
-              >
-                {item.label}
-              </motion.a>
-            ))}
-            <Button 
-              variant="cta" 
-              size="lg"
-              asChild
-            >
-              <a href="/#desafio">Participe do Desafio</a>
-            </Button>
-          </nav>
+        {/* CTA Desktop */}
+        <div className="hidden md:block">
+          <Link
+            href="#desafio"
+            className="bg-cyan-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-cyan-400 transition-colors"
+          >
+            Participe do Desafio
+          </Link>
         </div>
-      </header>
 
-      {/* Menu Lateral (Mobile) */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <>
-            {/* Backdrop com blur */}
-            <motion.div
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeMenu}
-            />
-            <motion.div
-              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-black/95 backdrop-blur-md border-l border-white/10 z-50 p-6"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
-            >
-              <div className="flex justify-between items-center mb-8">
-                <Link href="/" onClick={closeMenu} className="touch-target">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Ciro Neves Logo"
-                    width={200}
-                    height={60}
-                    className="h-10 w-auto"
-                    priority
-                  />
-                </Link>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={closeMenu}
-                  className="text-white hover:text-cyan-400 touch-target"
-                  aria-label="Fechar menu"
-                >
-                  <X size={24} />
-                </Button>
-              </div>
+        {/* Botão Mobile */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </div>
 
-              <nav className="flex flex-col space-y-6">
-                {menuItems.map((item, index) => (
-                  <motion.a
-                    key={item.href + index}
-                    href={item.href}
-                    onClick={closeMenu}
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.05 * index }}
-                    className="text-white/90 hover:text-cyan-400 transition-colors text-lg touch-target flex items-center"
-                  >
-                    {item.label}
-                  </motion.a>
-                ))}
-              </nav>
-
-              <div className="absolute bottom-6 left-6 right-6">
-                <Button 
-                  variant="cta" 
-                  size="lg" 
-                  className="w-full"
-                  asChild
-                >
-                  <a href="/#desafio" onClick={closeMenu}>Participe do Desafio</a>
-                </Button>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </>
+      {/* Menu Mobile */}
+      {isOpen && (
+        <div className="md:hidden bg-black/95 border-t border-white/10">
+          <div className="px-4 py-6 space-y-4">
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src="/images/logo.png"
+                alt="Ciro Neves Logo"
+                width={200}
+                height={60}
+                className="h-12 w-auto"
+                priority
+              />
+            </Link>
+            <nav className="flex flex-col space-y-4 mt-6">
+              <Link
+                href="/"
+                className="text-white/80 hover:text-white transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Início
+              </Link>
+              <Link
+                href="#sobre"
+                className="text-white/80 hover:text-white transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Sobre
+              </Link>
+              <Link
+                href="#programa"
+                className="text-white/80 hover:text-white transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Programa
+              </Link>
+              <Link
+                href="#depoimentos"
+                className="text-white/80 hover:text-white transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Depoimentos
+              </Link>
+              <Link
+                href="#calculadoras"
+                className="text-white/80 hover:text-white transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Calculadoras
+              </Link>
+              <Link
+                href="#contato"
+                className="text-white/80 hover:text-white transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Contato
+              </Link>
+              <Link
+                href="#desafio"
+                className="bg-cyan-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-cyan-400 transition-colors mt-4 text-center"
+                onClick={() => setIsOpen(false)}
+              >
+                Participe do Desafio
+              </Link>
+            </nav>
+          </div>
+        </div>
+      )}
+    </header>
   );
-}
+};
+
+export default Header;
