@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // 👇 Desliga ESLint só durante o build (no dev continua avisando)
   eslint: {
-    // 🚨 Só ignora no build (dev continua te avisando)
     ignoreDuringBuilds: true,
   },
 };
