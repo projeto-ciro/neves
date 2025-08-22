@@ -1,11 +1,10 @@
 // components/ui/typography.tsx
+"use client";
+
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-/**
- * Tipagem robusta para o prop "as", sem depender do namespace global JSX.
- * Funciona mesmo com "skipLibCheck" e diferentes targets.
- */
+// Usa o tipo de tags do React sem depender de JSX global
 type AsTag = keyof import("react").JSX.IntrinsicElements;
 
 type TypographyProps = {
@@ -14,6 +13,7 @@ type TypographyProps = {
   as?: AsTag;
 };
 
+/** Título grande da página (h1 por padrão) */
 export function DisplayTitle({
   children,
   className,
@@ -31,7 +31,8 @@ export function DisplayTitle({
   );
 }
 
-export function SectionTitle({
+/** Heading padrão de seção (h2 por padrão) */
+export function Heading({
   children,
   className,
   as: Component = "h2",
@@ -39,7 +40,7 @@ export function SectionTitle({
   return (
     <Component
       className={cn(
-        "scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0",
+        "scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0",
         className
       )}
     >
@@ -48,35 +49,7 @@ export function SectionTitle({
   );
 }
 
-export function Subtitle({
-  children,
-  className,
-  as: Component = "h3",
-}: TypographyProps) {
-  return (
-    <Component
-      className={cn(
-        "scroll-m-20 text-2xl font-semibold tracking-tight",
-        className
-      )}
-    >
-      {children}
-    </Component>
-  );
-}
-
-export function Paragraph({
-  children,
-  className,
-  as: Component = "p",
-}: TypographyProps) {
-  return (
-    <Component className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>
-      {children}
-    </Component>
-  );
-}
-
+/** Lead/Body: parágrafo de destaque */
 export function Lead({
   children,
   className,
@@ -89,18 +62,7 @@ export function Lead({
   );
 }
 
-export function Small({
-  children,
-  className,
-  as: Component = "small",
-}: TypographyProps) {
-  return (
-    <Component className={cn("text-sm font-medium leading-none", className)}>
-      {children}
-    </Component>
-  );
-}
-
+/** Texto mais discreto */
 export function Muted({
   children,
   className,
@@ -112,3 +74,27 @@ export function Muted({
     </Component>
   );
 }
+
+/* ============================
+   ALIASES de compatibilidade
+   (mantêm import { Title, Subtitle, Body } funcionando)
+   ============================ */
+
+// Title -> usa Heading (h2)
+export const Title = Heading;
+
+// Subtitle -> usa Muted por padrão (p), mas com peso um pouco maior
+export function Subtitle({
+  children,
+  className,
+  as: Component = "p",
+}: TypographyProps) {
+  return (
+    <Component className={cn("text-base text-muted-foreground", className)}>
+      {children}
+    </Component>
+  );
+}
+
+// Body -> usa Lead (p) como “corpo” mais legível
+export const Body = Lead;
