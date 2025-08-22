@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <Section 
       id="inicio" 
-      className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-24"
+      className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-20"
     >
       {/* Background Pattern with gradient and noise */}
       <div className="absolute inset-0 gradient-radial"></div>
@@ -20,15 +20,15 @@ export default function HeroSection() {
       </div>
 
       <Container className="relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-12rem)]">
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-10rem)]">
           {/* Conteúdo Textual */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div className="space-y-6">
+            <div className="space-y-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -58,12 +58,12 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-4"
             >
               <Button 
                 variant="cta"
                 size="lg" 
-                className="text-lg px-8 py-6 rounded-full"
+                className="text-base px-6 py-4 rounded-full"
                 asChild
               >
                 <a href="/#desafio">Participe do Desafio Você + Magra</a>

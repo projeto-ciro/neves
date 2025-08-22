@@ -23,10 +23,10 @@ const buttonVariants = cva(
         cta: "bg-cyan-400 hover:bg-cyan-500 text-black font-semibold shadow-lg hover:shadow-xl",
       },
       size: {
-        default: "h-11 px-6 py-2 has-[>svg]:px-4",
-        sm: "h-9 rounded-lg gap-1.5 px-4 has-[>svg]:px-3",
-        lg: "h-12 rounded-xl px-8 has-[>svg]:px-6",
-        icon: "size-11",
+        default: "h-10 px-5 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-lg gap-1.5 px-3 has-[>svg]:px-2",
+        lg: "h-11 rounded-xl px-6 has-[>svg]:px-5",
+        icon: "size-10",
       },
     },
     defaultVariants: {

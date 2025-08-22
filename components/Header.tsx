@@ -31,9 +31,9 @@ export default function Header() {
             <Image
               src="/images/logo.png"
               alt="Ciro Neves Logo"
-              width={400}
-              height={120}
-              className="h-16 md:h-20 w-auto transition-transform hover:scale-105"
+              width={320}
+              height={96}
+              className="h-12 md:h-16 w-auto transition-transform hover:scale-105"
               priority
             />
           </Link>

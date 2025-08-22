@@ -22,7 +22,7 @@ export function DisplayTitle({
   return (
     <Component
       className={cn(
-        "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
+        "scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl",
         className
       )}
     >
@@ -40,7 +40,7 @@ export function Heading({
   return (
     <Component
       className={cn(
-        "scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0",
+        "scroll-m-20 text-2xl font-semibold tracking-tight first:mt-0",
         className
       )}
     >
@@ -56,7 +56,7 @@ export function Lead({
   as: Component = "p",
 }: TypographyProps) {
   return (
-    <Component className={cn("text-xl text-muted-foreground", className)}>
+    <Component className={cn("text-lg text-muted-foreground", className)}>
       {children}
     </Component>
   );
