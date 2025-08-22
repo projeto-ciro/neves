@@ -1,18 +1,28 @@
-import { cn } from "@/lib/utils";
+// components/ui/typography.tsx
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
-interface TypographyProps {
+/**
+ * Tipagem robusta para o prop "as", sem depender do namespace global JSX.
+ * Funciona mesmo com "skipLibCheck" e diferentes targets.
+ */
+type AsTag = keyof import("react").JSX.IntrinsicElements;
+
+type TypographyProps = {
   children: ReactNode;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
-}
+  as?: AsTag;
+};
 
-export function DisplayTitle({ children, className, as: Component = "h1" }: TypographyProps) {
+export function DisplayTitle({
+  children,
+  className,
+  as: Component = "h1",
+}: TypographyProps) {
   return (
-    <Component 
+    <Component
       className={cn(
-        "font-bold leading-tight tracking-tight",
-        "text-[clamp(2.5rem,5vw,4rem)]", // 40px → 64px
+        "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
         className
       )}
     >
@@ -21,12 +31,15 @@ export function DisplayTitle({ children, className, as: Component = "h1" }: Typo
   );
 }
 
-export function Title({ children, className, as: Component = "h2" }: TypographyProps) {
+export function SectionTitle({
+  children,
+  className,
+  as: Component = "h2",
+}: TypographyProps) {
   return (
-    <Component 
+    <Component
       className={cn(
-        "font-bold leading-tight tracking-tight",
-        "text-[clamp(1.875rem,4vw,3rem)]", // 30px → 48px
+        "scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0",
         className
       )}
     >
@@ -35,12 +48,15 @@ export function Title({ children, className, as: Component = "h2" }: TypographyP
   );
 }
 
-export function Subtitle({ children, className, as: Component = "h3" }: TypographyProps) {
+export function Subtitle({
+  children,
+  className,
+  as: Component = "h3",
+}: TypographyProps) {
   return (
-    <Component 
+    <Component
       className={cn(
-        "font-semibold leading-tight",
-        "text-[clamp(1.25rem,3vw,2rem)]", // 20px → 32px
+        "scroll-m-20 text-2xl font-semibold tracking-tight",
         className
       )}
     >
@@ -49,31 +65,50 @@ export function Subtitle({ children, className, as: Component = "h3" }: Typograp
   );
 }
 
-export function Lead({ children, className, as: Component = "p" }: TypographyProps) {
+export function Paragraph({
+  children,
+  className,
+  as: Component = "p",
+}: TypographyProps) {
   return (
-    <Component 
-      className={cn(
-        "leading-relaxed",
-        "text-[clamp(1.125rem,2.5vw,1.5rem)]", // 18px → 24px
-        className
-      )}
-    >
+    <Component className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>
       {children}
     </Component>
   );
 }
 
-export function Body({ children, className, as: Component = "p" }: TypographyProps) {
+export function Lead({
+  children,
+  className,
+  as: Component = "p",
+}: TypographyProps) {
   return (
-    <Component 
-      className={cn(
-        "leading-relaxed",
-        "text-[clamp(0.875rem,2vw,1.125rem)]", // 14px → 18px
-        className
-      )}
-    >
+    <Component className={cn("text-xl text-muted-foreground", className)}>
       {children}
     </Component>
   );
 }
 
+export function Small({
+  children,
+  className,
+  as: Component = "small",
+}: TypographyProps) {
+  return (
+    <Component className={cn("text-sm font-medium leading-none", className)}>
+      {children}
+    </Component>
+  );
+}
+
+export function Muted({
+  children,
+  className,
+  as: Component = "p",
+}: TypographyProps) {
+  return (
+    <Component className={cn("text-sm text-muted-foreground", className)}>
+      {children}
+    </Component>
+  );
+}
