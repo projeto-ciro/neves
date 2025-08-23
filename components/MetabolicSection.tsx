@@ -13,7 +13,11 @@ export default function MetabolicSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="pt-16 pb-6 md:py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
+    <section
+      id="metodo"
+      ref={ref}
+      className="pt-16 pb-6 md:py-20 bg-gradient-to-br from-gray-50 to-cyan-50"
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Conteúdo */}
@@ -56,7 +60,9 @@ export default function MetabolicSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Análise Metabólica</h4>
-                    <p className="text-gray-600">Identificamos exatamente onde seu metabolismo está travado</p>
+                    <p className="text-gray-600">
+                      Identificamos exatamente onde seu metabolismo está travado
+                    </p>
                   </div>
                 </div>
 
@@ -66,7 +72,9 @@ export default function MetabolicSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Protocolo Personalizado</h4>
-                    <p className="text-gray-600">Plano feito sob medida para o seu corpo e rotina</p>
+                    <p className="text-gray-600">
+                      Plano feito sob medida para o seu corpo e rotina
+                    </p>
                   </div>
                 </div>
 
@@ -76,7 +84,9 @@ export default function MetabolicSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Acompanhamento Contínuo</h4>
-                    <p className="text-gray-600">Monitoramos seus resultados e ajustamos o protocolo conforme necessário</p>
+                    <p className="text-gray-600">
+                      Monitoramos seus resultados e ajustamos o protocolo conforme necessário
+                    </p>
                   </div>
                 </div>
               </motion.div>
