@@ -22,7 +22,11 @@ export default function ContatosPage() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -69,7 +73,8 @@ export default function ContatosPage() {
           </h1>
           <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
             Estou aqui para ajudar você a iniciar sua jornada de transformação.
-            Preencha o formulário abaixo ou utilize um dos canais de contato direto.
+            Preencha o formulário abaixo ou utilize um dos canais de contato
+            direto.
           </p>
         </div>
       </section>
@@ -85,7 +90,13 @@ export default function ContatosPage() {
               </h2>
 
               {formStatus.submitted && (
-                <div className={`p-4 mb-6 rounded-lg ${formStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                <div
+                  className={`p-4 mb-6 rounded-lg ${
+                    formStatus.success
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                  }`}
+                >
                   {formStatus.message}
                 </div>
               )}
@@ -93,7 +104,10 @@ export default function ContatosPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Nome *
                     </label>
                     <input
@@ -107,7 +121,10 @@ export default function ContatosPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Email *
                     </label>
                     <input
@@ -121,7 +138,10 @@ export default function ContatosPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Telefone / WhatsApp
                     </label>
                     <input
@@ -136,7 +156,10 @@ export default function ContatosPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Assunto
                   </label>
                   <select
@@ -154,7 +177,10 @@ export default function ContatosPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Mensagem *
                   </label>
                   <textarea
@@ -175,7 +201,9 @@ export default function ContatosPage() {
                   </Button>
 
                   {formStatus.submitted && formStatus.success && (
-                    <span className="text-sm text-green-600">Enviado! Em breve entrarei em contato.</span>
+                    <span className="text-sm text-green-600">
+                      Enviado! Em breve entrarei em contato.
+                    </span>
                   )}
                 </div>
               </form>
@@ -203,9 +231,13 @@ export default function ContatosPage() {
                     <Phone className="h-5 w-5 text-cyan-500" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">Telefone</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      Telefone
+                    </h3>
                     <p className="text-gray-600">(21) 99999-9999</p>
-                    <p className="text-gray-500 text-sm mt-1">Disponível para chamadas e WhatsApp</p>
+                    <p className="text-gray-500 text-sm mt-1">
+                      Disponível para chamadas e WhatsApp
+                    </p>
                   </div>
                 </div>
 
@@ -214,9 +246,13 @@ export default function ContatosPage() {
                     <Mail className="h-5 w-5 text-cyan-500" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">Email</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      Email
+                    </h3>
                     <p className="text-gray-600">contato@seudominio.com</p>
-                    <p className="text-gray-500 text-sm mt-1">Resposta em até 24h úteis</p>
+                    <p className="text-gray-500 text-sm mt-1">
+                      Resposta em até 24h úteis
+                    </p>
                   </div>
                 </div>
 
@@ -225,9 +261,13 @@ export default function ContatosPage() {
                     <MessageSquare className="h-5 w-5 text-cyan-500" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">WhatsApp</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      WhatsApp
+                    </h3>
                     <p className="text-gray-600">(21) 99999-9999</p>
-                    <p className="text-gray-500 text-sm mt-1">Atendimento rápido no horário comercial</p>
+                    <p className="text-gray-500 text-sm mt-1">
+                      Atendimento rápido no horário comercial
+                    </p>
                   </div>
                 </div>
 
@@ -236,9 +276,13 @@ export default function ContatosPage() {
                     <MapPin className="h-5 w-5 text-cyan-500" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">Localização</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      Localização
+                    </h3>
                     <p className="text-gray-600">João Pessoa — PB</p>
-                    <p className="text-gray-500 text-sm mt-1">Atendimento presencial e online</p>
+                    <p className="text-gray-500 text-sm mt-1">
+                      Atendimento presencial e online
+                    </p>
                   </div>
                 </div>
 
@@ -247,19 +291,25 @@ export default function ContatosPage() {
                     <Clock className="h-5 w-5 text-cyan-500" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">Horário de Atendimento</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      Horário de Atendimento
+                    </h3>
                     <p className="text-gray-600">Segunda a Sexta: 8h às 18h</p>
                     <p className="text-gray-600">Sábado: 9h às 13h</p>
-                    <p className="text-gray-500 text-sm mt-1">Consultas com hora marcada</p>
+                    <p className="text-gray-500 text-sm mt-1">
+                      Consultas com hora marcada
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Redes Sociais */}
               <div className="mt-8">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Redes Sociais</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                  Redes Sociais
+                </h3>
                 <div className="flex space-x-4">
-                  {/* icones mantidos iguais */}
+                  {/* ícones */}
                 </div>
               </div>
             </div>
@@ -272,7 +322,53 @@ export default function ContatosPage() {
             </h2>
 
             <div className="max-w-3xl mx-auto space-y-6">
-              {/* FAQs mantidos */}
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Como funciona a primeira consulta?
+                </h3>
+                <p className="text-gray-600">
+                  Na primeira consulta, realizamos uma avaliação completa do seu
+                  histórico de saúde, hábitos alimentares e objetivos. Também
+                  fazemos medições e análises para entender seu metabolismo
+                  atual. A partir disso, desenvolvemos um plano personalizado.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Quanto tempo leva para ver resultados?
+                </h3>
+                <p className="text-gray-600">
+                  Os resultados variam de pessoa para pessoa, mas a maioria dos
+                  clientes começa a notar mudanças nas primeiras 2-3 semanas.
+                  Resultados mais significativos geralmente são visíveis após
+                  6-8 semanas seguindo o programa corretamente.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  O programa inclui exercícios físicos?
+                </h3>
+                <p className="text-gray-600">
+                  Sim, o programa inclui recomendações de atividades físicas
+                  adaptadas à sua condição atual e objetivos. Trabalhamos com
+                  uma abordagem gradual e sustentável, focando em exercícios que
+                  você possa incorporar à sua rotina.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Preciso usar suplementos?
+                </h3>
+                <p className="text-gray-600">
+                  Não necessariamente. Nosso foco principal é na alimentação
+                  real e hábitos saudáveis. Em alguns casos, podemos recomendar
+                  suplementos específicos, mas sempre como complemento a uma
+                  alimentação balanceada, nunca como substitutos.
+                </p>
+              </div>
             </div>
           </div>
         </div>
