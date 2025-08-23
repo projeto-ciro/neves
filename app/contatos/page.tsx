@@ -66,12 +66,12 @@ export default function ContatosPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-cyan-900/20 to-transparent">
+      <section className="pt-28 md:pt-32 pb-6 bg-gradient-to-b from-cyan-900/20 to-transparent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
             Entre em <span className="text-cyan-500">Contato</span>
           </h1>
-          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto mb-4">
             Estou aqui para ajudar você a iniciar sua jornada de transformação.
             Preencha o formulário abaixo ou utilize um dos canais de contato
             direto.
@@ -80,7 +80,7 @@ export default function ContatosPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Formulário de Contato */}

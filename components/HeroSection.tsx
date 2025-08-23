@@ -15,7 +15,7 @@ export default function HeroSection() {
       id="inicio"
       className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-20"
     >
-      {/* Background Pattern with gradient and noise */}
+      {/* fundos decorativos */}
       <div className="absolute inset-0 gradient-radial" />
       <div className="absolute inset-0 noise-texture" />
       <div className="absolute inset-0 opacity-10">
@@ -24,7 +24,7 @@ export default function HeroSection() {
 
       <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-10rem)]">
-          {/* Conteúdo Textual */}
+          {/* texto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -94,7 +94,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Imagem do Ciro */}
+          {/* imagem do Ciro — mostrar 100% da arte (sem corte) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -102,18 +102,18 @@ export default function HeroSection() {
             className="relative"
           >
             <div className="relative w-full max-w-md mx-auto">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden relative">
+              <div className="relative h-[55vh] sm:h-auto sm:aspect-[3/4] rounded-2xl overflow-hidden">
                 <Image
                   src="/images/ciro.png"
                   alt="Ciro Neves - Personal Trainer e Especialista em Emagrecimento"
                   fill
-                  className="object-cover"
+                  className="object-contain"  /* ← mostra a imagem inteira com a borda */
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
                 />
               </div>
 
-              {/* Elementos decorativos */}
+              {/* decorativos */}
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-cyan-400 rounded-full opacity-20 blur-xl" />
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500 rounded-full opacity-20 blur-xl" />
             </div>
@@ -121,7 +121,7 @@ export default function HeroSection() {
         </div>
       </Container>
 
-      {/* Scroll Indicator → levar para o método (bloco 02) */}
+      {/* scroll indicator */}
       <motion.a
         href="/#bloco-02-metodo"
         aria-label="Rolar para o método (bloco 02)"

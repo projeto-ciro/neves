@@ -485,8 +485,8 @@ export default function CalculadorasPage() {
     <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-x-hidden">
       <Header />
 
-      {/* AUMENTADO o espaço abaixo do header */}
-      <Section className="pt-28 sm:pt-32 lg:pt-36 relative overflow-hidden">
+      {/* MAIS ESPAÇO ABAIXO DO HEADER + respiro no fim da seção */}
+      <Section className="pt-36 sm:pt-40 lg:pt-44 pb-16 md:pb-20 relative overflow-hidden">
         {/* Background Pattern with gradient and noise */}
         <div className="absolute inset-0 gradient-radial"></div>
         <div className="absolute inset-0 noise-texture"></div>
@@ -494,7 +494,7 @@ export default function CalculadorasPage() {
         <Container className="relative z-10">
           <SectionTitle />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-14 md:mt-16">
             <CalcTMB resultRef={register} minResultHeight={minH} />
             <CalcFC resultRef={register} minResultHeight={minH} />
             <CalcIMC resultRef={register} minResultHeight={minH} />

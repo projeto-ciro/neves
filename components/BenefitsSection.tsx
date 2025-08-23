@@ -36,15 +36,15 @@ export default function BenefitsSection() {
           viewport={viewport}
           className="grid lg:grid-cols-2 gap-16 items-center"
         >
-          {/* Imagem SEM blur */}
+          {/* Imagem — aumentada para dar mais destaque */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="rounded-2xl overflow-hidden relative w-full h-[480px] md:h-[550px]">
+            <div className="relative w-full h-[480px] md:h-[560px] rounded-2xl overflow-hidden">
               <Image
                 src="/images/modelo-page1.png"
                 alt="Modelo demonstrando os benefícios do programa"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover"
+                className="object-contain"
                 priority={false}
               />
             </div>

@@ -23,7 +23,7 @@ type Props = {
 };
 
 /**
- * Full‑bleed real:
+ * Full-bleed real:
  * - ocupa 100% da viewport (w-screen)
  * - centraliza fora do container com left/right 50% e margens negativas
  * - object-cover para não deixar “faixas”
@@ -32,7 +32,8 @@ type Props = {
 export default function BannerFullBleed({
   src,
   alt,
-  heightClass = "h-[clamp(180px,26vw,420px)]",
+  // ⬇️ Agora mínimo maior no mobile (360px) e máximo maior no desktop (520px)
+  heightClass = "h-[clamp(720px,55vw,680px)]",
   flush = true,
   className,
 }: Props) {

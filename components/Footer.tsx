@@ -17,29 +17,22 @@ export default function Footer() {
     { icon: Youtube, href: "#", label: "YouTube" },
   ];
 
-  const quickLinks = [
-    { label: "Início", href: "/#inicio" },
-    { label: "Sobre", href: "/#sobre" },
-    { label: "Programa", href: "/#programa" },
-    { label: "Depoimentos", href: "/#depoimentos" },
-    { label: "Contato", href: "/#contato" },
-  ];
-
   return (
-    <footer ref={ref} className="bg-black text-white border-t border-white/10">
-      <Section>
+    <footer className="bg-black text-white">
+      <Section className="pt-12 pb-8">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {/* Logo e Descrição */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="space-y-4 lg:col-span-1"
-            >
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="grid gap-10 md:grid-cols-3"
+          >
+            {/* Logo + descrição */}
+            <div className="space-y-6">
               <Link href="/" className="inline-block">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-footer.png"
                   alt="Logo Ciro Neves"
                   width={320}
                   height={96}
@@ -53,116 +46,78 @@ export default function Footer() {
                 Transformando vidas através da reprogramação metabólica.
               </p>
 
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                    className="w-10 h-10 bg-white/10 hover:bg-cyan-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target"
-                    aria-label={social.label}
+              <div className="flex items-center gap-4">
+                {socialLinks.map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    className="text-white/80 hover:text-cyan-400 transition-colors"
                   >
-                    <social.icon size={18} />
-                  </motion.a>
+                    <Icon size={22} />
+                  </a>
                 ))}
               </div>
-            </motion.div>
-
-            {/* Links Rápidos */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-4"
-            >
-              <h4 className="text-lg font-semibold text-white">Links Rápidos</h4>
-              <ul className="space-y-2">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-white/70 hover:text-cyan-400 transition-colors text-sm link-underline touch-target inline-block"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            </div>
 
             {/* Contato */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="space-y-4"
-            >
-              <h4 className="text-lg font-semibold text-white">Contato</h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <Mail size={16} className="text-cyan-400 flex-shrink-0" />
-                  <span className="text-white/70 text-sm">contato@cironeves.com</span>
+            <div className="space-y-4">
+              <h4 className="font-semibold text-lg">Contato</h4>
+              <div className="space-y-3 text-white/80 text-sm">
+                <div className="flex items-center gap-3">
+                  <Mail size={18} />
+                  <a href="mailto:cironevespersonal@gmail.com" className="hover:text-cyan-400">
+                    cironevespersonal@gmail.com
+                  </a>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Phone size={16} className="text-cyan-400 flex-shrink-0" />
-                  <span className="text-white/70 text-sm">(11) 99999-9999)</span>
+                <div className="flex items-center gap-3">
+                  <Phone size={18} />
+                  <a href="tel:+5583999210852" className="hover:text-cyan-400">
+                    (83) 9 9921-0852
+                  </a>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin size={16} className="text-cyan-400 flex-shrink-0" />
-                  <span className="text-white/70 text-sm">São Paulo, SP</span>
+                <div className="flex items-start gap-3">
+                  <MapPin size={18} className="mt-1" />
+                  <address className="not-italic">
+                    Rua Severino Alves Aires, nº 357, Miramar<br />
+                    João Pessoa - PB
+                  </address>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            {/* Programa */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="space-y-4"
-            >
-              <h4 className="text-lg font-semibold text-white">Programa</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li>• Desafio Você + Magra</li>
-                <li>• Reprogramação Metabólica</li>
-                <li>• Acompanhamento Personalizado</li>
-                <li>• Grupo de Apoio Exclusivo</li>
-              </ul>
-            </motion.div>
-          </div>
+            {/* Links rápidos */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-lg">Links</h4>
+              <div className="grid grid-cols-2 gap-3 text-sm text-white/80">
+                <a href="#inicio" className="hover:text-cyan-400 transition-colors">
+                  Início
+                </a>
+                <a href="#beneficios" className="hover:text-cyan-400 transition-colors">
+                  Benefícios
+                </a>
+                <a href="#metodo" className="hover:text-cyan-400 transition-colors">
+                  Método
+                </a>
+                <a href="#calculadoras" className="hover:text-cyan-400 transition-colors">
+                  Calculadoras
+                </a>
+                <a href="#ebook" className="hover:text-cyan-400 transition-colors">
+                  Ebook
+                </a>
+                <a href="#contato" className="hover:text-cyan-400 transition-colors">
+                  Contato
+                </a>
+              </div>
 
-          {/* Linha divisória */}
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="border-t border-white/10 pt-8"
-          >
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-white/70 text-sm"
-              >
-                © 2024 Ciro Neves. Todos os direitos reservados.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="flex space-x-6 text-sm text-white/70"
-              >
+              <div className="pt-4 text-xs text-white/60 space-x-4">
                 <a href="#" className="hover:text-cyan-400 transition-colors link-underline">
                   Política de Privacidade
                 </a>
                 <a href="#" className="hover:text-cyan-400 transition-colors link-underline">
                   Termos de Uso
                 </a>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </Container>

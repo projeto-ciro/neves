@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -52,19 +53,22 @@ export default function EbookSection() {
     <section ref={ref} className="py-20 bg-gradient-to-br from-cyan-500 to-blue-600">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-          {/* Capa do Ebook */}
+          {/* Capa do Ebook — MAIOR no mobile */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            <div className="relative inline-block">
-              <div className="aspect-[3/4.5] w-80 mx-auto lg:mx-0 rounded-lg shadow-2xl overflow-hidden relative">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: "url(\"/images/ebook.png\")"                 }}
+            <div className="relative inline-block w-full">
+              <div className="relative mx-auto lg:mx-0 w-full max-w-md sm:max-w-lg h-[360px] sm:h-[420px] lg:h-[520px] rounded-lg shadow-2xl overflow-hidden">
+                <Image
+                  src="/images/ebook.png"
+                  alt="Capa do ebook"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 40vw"
+                  priority
                 />
               </div>
 
@@ -100,7 +104,7 @@ export default function EbookSection() {
                 <strong>Eu preparei um material muito especial para você!</strong>
                 <br />
                 <br />
-                Um guia completo com os primeiros passos para reativar seu metabolismo 
+                Um guia completo com os primeiros passos para reativar seu metabolismo
                 e começar a emagrecer de forma saudável após os 40 anos.
               </motion.p>
 
@@ -191,4 +195,3 @@ export default function EbookSection() {
     </section>
   );
 }
-
