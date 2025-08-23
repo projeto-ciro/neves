@@ -234,7 +234,7 @@ export default function ContatosPage() {
                     <h3 className="text-lg font-semibold text-gray-800">
                       Telefone
                     </h3>
-                    <p className="text-gray-600">(21) 99999-9999</p>
+                    <p className="text-gray-600">+55 (83) 9 9921‑0852</p>
                     <p className="text-gray-500 text-sm mt-1">
                       Disponível para chamadas e WhatsApp
                     </p>
@@ -249,7 +249,7 @@ export default function ContatosPage() {
                     <h3 className="text-lg font-semibold text-gray-800">
                       Email
                     </h3>
-                    <p className="text-gray-600">contato@seudominio.com</p>
+                    <p className="text-gray-600">cironevespersonal@gmail.com</p>
                     <p className="text-gray-500 text-sm mt-1">
                       Resposta em até 24h úteis
                     </p>
@@ -264,7 +264,7 @@ export default function ContatosPage() {
                     <h3 className="text-lg font-semibold text-gray-800">
                       WhatsApp
                     </h3>
-                    <p className="text-gray-600">(21) 99999-9999</p>
+                    <p className="text-gray-600">+55 (83) 9 9921‑0852</p>
                     <p className="text-gray-500 text-sm mt-1">
                       Atendimento rápido no horário comercial
                     </p>
@@ -279,7 +279,10 @@ export default function ContatosPage() {
                     <h3 className="text-lg font-semibold text-gray-800">
                       Localização
                     </h3>
-                    <p className="text-gray-600">João Pessoa — PB</p>
+                    <p className="text-gray-600">
+                      Rua Severino Alves Aires, nº 357, Bairro Miramar, João
+                      Pessoa ‑ PB
+                    </p>
                     <p className="text-gray-500 text-sm mt-1">
                       Atendimento presencial e online
                     </p>
@@ -303,47 +306,35 @@ export default function ContatosPage() {
                 </div>
               </div>
 
-              {/* Redes Sociais */}
+              {/* Redes de Contato */}
               <div className="mt-8">
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                  Redes Sociais
+                  Redes de Contato
                 </h3>
                 <div className="flex space-x-4">
-                  {/* Facebook */}
+                  {/* Telefone (no lugar do Facebook) */}
                   <a
-                    href="#"
-                    aria-label="Facebook"
+                    href="tel:+5583999210852"
+                    aria-label="Ligar para Ciro Neves"
                     className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center hover:bg-cyan-500/30 transition-colors"
-                    rel="noopener noreferrer"
                   >
-                    <svg
-                      className="h-5 w-5 text-cyan-500"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54V12h2.54V9.797c0-2.507 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <Phone className="h-5 w-5 text-cyan-500" />
                   </a>
 
                   {/* Instagram */}
                   <a
-                    href="#"
+                    href="https://instagram.com/cironevespersonal"
                     aria-label="Instagram"
                     className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center hover:bg-cyan-500/30 transition-colors"
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <svg
                       className="h-5 w-5 text-cyan-500"
                       fill="currentColor"
                       viewBox="0 0 24 24"
-                      aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
                       <path
                         fillRule="evenodd"
@@ -353,44 +344,33 @@ export default function ContatosPage() {
                     </svg>
                   </a>
 
-                  {/* X / Twitter */}
+                  {/* WhatsApp (no lugar do Twitter) */}
                   <a
-                    href="#"
-                    aria-label="X (Twitter)"
+                    href="https://wa.me/5583999210852"
+                    aria-label="WhatsApp"
                     className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center hover:bg-cyan-500/30 transition-colors"
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <svg
                       className="h-5 w-5 text-cyan-500"
+                      viewBox="0 0 32 32"
                       fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743A11.65 11.65 0 013.179 4.9a4.106 4.106 0 001.27 5.477 4.073 4.073 0 01-1.86-.513v.052a4.106 4.106 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                      <path d="M19.11 17.33c-.31-.16-1.83-.9-2.12-1-.28-.1-.48-.16-.68.16-.2.31-.78 1-.96 1.2-.18.2-.35.23-.66.08-.31-.16-1.31-.48-2.5-1.53-.92-.82-1.54-1.84-1.72-2.15-.18-.31 0-.48.14-.63.14-.14.31-.35.47-.53.16-.18.2-.31.31-.51.1-.2.05-.38-.03-.53-.08-.16-.68-1.64-.93-2.24-.25-.6-.5-.52-.68-.53h-.58c-.2 0-.53.08-.81.38-.28.31-1.07 1.04-1.07 2.53s1.1 2.94 1.25 3.15c.16.2 2.16 3.29 5.23 4.6.73.32 1.3.51 1.74.65.73.23 1.4.2 1.93.12.59-.09 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.12-.28-.2-.59-.36z" />
+                      <path d="M26.65 5.34C23.8 2.49 20.02 1 16 1 7.72 1 1 7.72 1 16c0 2.65.69 5.25 2 7.55L1 31l7.62-1.99C10.85 30.28 13.39 31 16 31c8.28 0 15-6.72 15-15 0-4.02-1.49-7.8-4.35-10.66zM16 28.89c-2.43 0-4.8-.66-6.86-1.92l-.49-.29-4.52 1.18 1.21-4.41-.3-.5C3.71 20.87 3.11 18.47 3.11 16 3.11 9 9 3.11 16 3.11c3.44 0 6.66 1.34 9.09 3.77C27.52 9.31 28.89 12.56 28.89 16c0 7-5.89 12.89-12.89 12.89z" />
                     </svg>
                   </a>
 
-                  {/* YouTube */}
+                  {/* E-mail (no lugar do YouTube) */}
                   <a
-                    href="#"
-                    aria-label="YouTube"
+                    href="mailto:cironevespersonal@gmail.com"
+                    aria-label="E-mail"
                     className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center hover:bg-cyan-500/30 transition-colors"
-                    rel="noopener noreferrer"
                   >
-                    <svg
-                      className="h-5 w-5 text-cyan-500"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M19.812 5.418c-.44-1.652-1.74-2.952-3.392-3.391C14.584 1.5 12 1.5 12 1.5s-2.584 0-4.419.527C5.93 2.466 4.63 3.766 4.19 5.418 3.663 7.254 3.663 10 3.663 10s0 2.746.527 4.582c.44 1.651 1.74 2.952 3.392 3.39C9.416 18.5 12 18.5 12 18.5s2.584 0 4.419-.528c1.651-.438 2.952-1.739 3.39-3.39.528-1.835.528-4.581.528-4.581s0-2.746-.528-4.582ZM10 15V9l5.194 3L10 15z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <Mail className="h-5 w-5 text-cyan-500" />
                   </a>
                 </div>
               </div>

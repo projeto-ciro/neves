@@ -132,8 +132,8 @@ export default function CalculatorSection() {
             size="lg"
             className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold text-lg px-12 py-6 rounded-full"
           >
-            <Link href="/calculadoras" aria-label="Ir para a página de calculadoras">
-              Acessar Calculadoras
+            <Link href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
+              Eu Quero
             </Link>
           </Button>
         </motion.div>

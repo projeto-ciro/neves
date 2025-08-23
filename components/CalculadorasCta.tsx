@@ -22,9 +22,9 @@ export default function CalculadorasCta() {
 
           <motion.div initial={{ scale: 0.96, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
             <Button asChild className="bg-cyan-400 hover:bg-cyan-500 text-black font-semibold px-6 py-6">
-              <Link href="/calculadoras">
+              <Link href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
                 <Calculator className="mr-2 h-5 w-5" />
-                Acessar Calculadoras
+                Eu Quero
               </Link>
             </Button>
           </motion.div>

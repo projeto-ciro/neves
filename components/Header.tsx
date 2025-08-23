@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+const WHATSAPP_URL = "https://wa.me/5583999210852";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -47,12 +49,14 @@ const Header = () => {
 
         {/* CTA Desktop */}
         <div className="hidden md:block">
-          <Link
-            href="/#desafio"
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-cyan-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-cyan-400 transition-colors"
           >
             Participe do Desafio
-          </Link>
+          </a>
         </div>
 
         {/* Botão Mobile */}
@@ -114,13 +118,15 @@ const Header = () => {
               >
                 Contato
               </Link>
-              <Link
-                href="/#desafio"
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-cyan-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-cyan-400 transition-colors mt-4 text-center"
                 onClick={() => setIsOpen(false)}
               >
                 Participe do Desafio
-              </Link>
+              </a>
             </nav>
           </div>
         </div>

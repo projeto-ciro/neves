@@ -27,7 +27,7 @@ export default function SobrePage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600">
-                  <Link href="/#programa">Conheça meu Método</Link>
+                  <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">Conheça meu Método</a>
                 </Button>
                 <Button
                   asChild
@@ -35,7 +35,7 @@ export default function SobrePage() {
                   variant="outline"
                   className="border-cyan-500 text-cyan-500 hover:bg-cyan-500/10"
                 >
-                  <Link href="/contatos">Entre em Contato</Link>
+                  <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">Entre em Contato</a>
                 </Button>
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function SobrePage() {
 
           <div className="mt-12 text-center">
             <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600">
-              <Link href="/#desafio">Participe do Desafio</Link>
+              <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">Participe do Desafio</a>
             </Button>
           </div>
         </div>
@@ -211,7 +211,7 @@ export default function SobrePage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600">
-              <Link href="/contatos">Agendar Consulta</Link>
+              <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">Eu Quero</a>
             </Button>
             <Button
               asChild

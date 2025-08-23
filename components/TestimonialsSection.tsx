@@ -7,6 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
+const WHATSAPP_URL =
+  "https://wa.me/5583999210852?text=Ol%C3%A1%20Ciro!%20Quero%20saber%20mais%20sobre%20o%20programa.";
+
 export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -187,8 +190,11 @@ export default function TestimonialsSection() {
           <Button
             size="lg"
             className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-6"
+            asChild
           >
-            Quero Ser a Próxima História de Sucesso
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              Quero Ser a Próxima História de Sucesso
+            </a>
           </Button>
         </motion.div>
       </div>

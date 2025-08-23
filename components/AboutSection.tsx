@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
+const WHATSAPP_URL =
+  "https://wa.me/5583999210852?text=Ol%C3%A1%20Ciro!%20Quero%20conhecer%20o%20m%C3%A9todo.";
+
 export default function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -74,8 +77,16 @@ export default function AboutSection() {
               <Button
                 size="lg"
                 className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-6"
+                asChild
               >
-                Conheça o Método
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Falar com Ciro no WhatsApp"
+                >
+                  Conheça o Método
+                </a>
               </Button>
 
               <div className="mt-6 md:mt-8 flex items-center space-x-4 text-sm text-gray-500">

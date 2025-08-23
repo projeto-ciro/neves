@@ -2,52 +2,15 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Download, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 export default function EbookSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [formData, setFormData] = useState({ name: "", email: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({ name: "", email: "" });
-      } else {
-        alert('Erro ao enviar formulário. Tente novamente.');
-      }
-    } catch (error) {
-      alert('Erro ao enviar formulário. Tente novamente.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   return (
     <section ref={ref} className="py-20 bg-gradient-to-br from-cyan-500 to-blue-600">
@@ -133,60 +96,23 @@ export default function EbookSection() {
               </motion.div>
             </div>
 
-            {/* Formulário */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-center"
             >
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-                <CardContent className="p-6">
-                  {!isSubmitted ? (
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                      <div>
-                        <Input
-                          type="text"
-                          name="name"
-                          placeholder="Seu nome completo"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          className="bg-white/90 border-white/30 text-gray-900 placeholder:text-gray-600"
-                        />
-                      </div>
-                      <div>
-                        <Input
-                          type="email"
-                          name="email"
-                          placeholder="Seu melhor e-mail"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          className="bg-white/90 border-white/30 text-gray-900 placeholder:text-gray-600"
-                        />
-                      </div>
-                      <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full bg-black hover:bg-gray-800 text-white font-bold py-6 text-lg"
-                      >
-                        {isSubmitting ? "Enviando..." : "Baixar Ebook Gratuito"}
-                      </Button>
-                    </form>
-                  ) : (
-                    <div className="text-center py-8">
-                      <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                      <h3 className="text-xl font-bold text-white mb-2">Obrigado!</h3>
-                      <p className="text-white/90">
-                        Enviamos o ebook para seu e-mail. Verifique também a caixa de spam.
-                      </p>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-
+              <Button
+                asChild
+                size="lg"
+                className="bg-black hover:bg-gray-800 text-white font-bold py-6 text-lg"
+              >
+                <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
+                  Baixar Ebook Gratuito
+                </a>
+              </Button>
               <p className="text-xs text-white/70 text-center mt-4">
-                Seus dados estão seguros. Não enviamos spam.
+                Clique para baixar o ebook via WhatsApp.
               </p>
             </motion.div>
           </motion.div>

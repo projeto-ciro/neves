@@ -94,8 +94,10 @@ function ActionRow() {
         <span>assista ao</span>
         <span className="underline font-medium">vídeo</span>
       </a>
-      <Button variant="cta" className="w-[150px]">
-        assistir agora
+      <Button variant="cta" className="w-[150px]" asChild>
+        <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
+          assistir agora
+        </a>
       </Button>
     </div>
   );

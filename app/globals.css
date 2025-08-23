@@ -39,7 +39,7 @@
   --color-card: var(--card);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
+  --radius-lg: calc(var(--radius) + 0px);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
@@ -121,11 +121,14 @@
   }
 }
 
-
 /* Utility classes for modern design */
 @layer utilities {
   .gradient-radial {
-    background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(6, 182, 212, 0.1) 0%,
+      transparent 70%
+    );
   }
 
   .noise-texture {

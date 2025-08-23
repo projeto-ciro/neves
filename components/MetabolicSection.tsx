@@ -6,12 +6,13 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Play } from "lucide-react";
 
+const WHATSAPP_URL = "https://wa.me/5583999210852";
+
 export default function MetabolicSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    // ↓ pb menor no mobile para colar na seção seguinte
     <section ref={ref} className="pt-16 pb-6 md:py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -42,6 +43,7 @@ export default function MetabolicSection() {
                 de forma natural, mesmo após os 40 anos.
               </motion.p>
 
+              {/* Etapas */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -80,6 +82,7 @@ export default function MetabolicSection() {
               </motion.div>
             </div>
 
+            {/* Botão WhatsApp */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -88,8 +91,11 @@ export default function MetabolicSection() {
               <Button
                 size="lg"
                 className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-6"
+                asChild
               >
-                Quero Reprogramar Meu Metabolismo
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  Quero Reprogramar Meu Metabolismo
+                </a>
               </Button>
             </motion.div>
           </motion.div>
@@ -117,7 +123,6 @@ export default function MetabolicSection() {
                 className="w-full h-full object-cover"
               />
 
-              {/* overlay hover */}
               <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           </motion.div>
