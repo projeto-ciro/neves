@@ -28,7 +28,7 @@ const Header = () => {
           <Link href="/" className="text-white/80 hover:text-white transition-colors">
             Início
           </Link>
-          <Link href="/#sobre" className="text-white/80 hover:text-white transition-colors">
+          <Link href="/sobre" className="text-white/80 hover:text-white transition-colors">
             Sobre
           </Link>
           <Link href="/#programa" className="text-white/80 hover:text-white transition-colors">
@@ -40,7 +40,7 @@ const Header = () => {
           <Link href="/calculadoras" className="text-white/80 hover:text-white transition-colors">
             Calculadoras
           </Link>
-          <Link href="/#contato" className="text-white/80 hover:text-white transition-colors">
+          <Link href="/contatos" className="text-white/80 hover:text-white transition-colors">
             Contato
           </Link>
         </nav>
@@ -69,24 +69,9 @@ const Header = () => {
 
       {/* Menu Mobile */}
       {isOpen && (
-        <div className="md:hidden bg-black/95 border-t border-white/10">
-          <div className="px-4 py-6 space-y-4">
-            <Link
-              href="/"
-              className="flex items-center space-x-2"
-              onClick={() => setIsOpen(false)}
-            >
-              <Image
-                src="/images/logo.png"
-                alt="Ciro Neves Logo"
-                width={200}
-                height={60}
-                className="h-12 w-auto transition-transform hover:scale-105"
-                priority
-              />
-            </Link>
-
-            <nav className="flex flex-col space-y-4 mt-6">
+        <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-white/10">
+          <div className="container mx-auto px-4 py-6">
+            <nav className="flex flex-col space-y-4">
               <Link
                 href="/"
                 className="text-white/80 hover:text-white transition-colors"
@@ -95,7 +80,7 @@ const Header = () => {
                 Início
               </Link>
               <Link
-                href="/#sobre"
+                href="/sobre"
                 className="text-white/80 hover:text-white transition-colors"
                 onClick={() => setIsOpen(false)}
               >
@@ -123,7 +108,7 @@ const Header = () => {
                 Calculadoras
               </Link>
               <Link
-                href="/#contato"
+                href="/contatos"
                 className="text-white/80 hover:text-white transition-colors"
                 onClick={() => setIsOpen(false)}
               >
