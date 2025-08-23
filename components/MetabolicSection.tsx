@@ -11,7 +11,8 @@ export default function MetabolicSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
+    // ↓ pb menor no mobile para colar na seção seguinte
+    <section ref={ref} className="pt-16 pb-6 md:py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Conteúdo */}
@@ -28,9 +29,7 @@ export default function MetabolicSection() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-4xl md:text-5xl font-bold text-gray-900"
               >
-                <span className="text-cyan-500">Reprogramação</span>
-                <br />
-                Metabólica
+                Reprogramação <span className="text-cyan-500">Metabólica</span>
               </motion.h2>
 
               <motion.p
@@ -65,7 +64,7 @@ export default function MetabolicSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Protocolo Personalizado</h4>
-                    <p className="text-gray-600">Criamos um plano específico para reativar sua queima de gordura</p>
+                    <p className="text-gray-600">Plano feito sob medida para o seu corpo e rotina</p>
                   </div>
                 </div>
 
@@ -104,32 +103,26 @@ export default function MetabolicSection() {
           >
             <div className="aspect-video rounded-2xl overflow-hidden relative group cursor-pointer">
               <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                backgroundImage: "url(\"/images/programacao-metabolica.png\")"
-                }}
+                className="absolute inset-0 z-10 flex items-center justify-center"
+                aria-hidden="true"
               >
-                <div className="absolute inset-0 bg-black/50"></div>
-              </div>
-
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-cyan-500 rounded-full flex items-center justify-center group-hover:bg-cyan-400 transition-colors">
-                  <Play size={32} className="ml-1 text-white" />
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-cyan-500/90 backdrop-blur-sm text-white flex items-center justify-center shadow-lg">
+                  <Play className="w-8 h-8 md:w-10 md:h-10" />
                 </div>
               </div>
 
-              {/* Overlay hover */}
-              <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </div>
+              <img
+                src="/images/video-thumb.png"
+                alt="Vídeo sobre o método"
+                className="w-full h-full object-cover"
+              />
 
-            {/* Elementos decorativos */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-cyan-400 rounded-full opacity-20 blur-xl"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500 rounded-full opacity-20 blur-xl"></div>
+              {/* overlay hover */}
+              <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
           </motion.div>
         </div>
       </div>
     </section>
   );
 }
-

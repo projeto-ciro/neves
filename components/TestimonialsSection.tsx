@@ -56,7 +56,11 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="depoimentos" ref={ref} className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
+    <section
+      id="depoimentos"
+      ref={ref}
+      className="pt-8 md:pt-12 pb-20 bg-gradient-to-br from-gray-50 to-cyan-50"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2
@@ -94,14 +98,19 @@ export default function TestimonialsSection() {
                     <div
                       className="absolute inset-0 bg-cover bg-center"
                       style={{
-                        // Para Carla (índice 2), usar 25.png; demais continuam no padrão 20/21/22/23
                         backgroundImage: `url("/images/profile-${testimonials[currentTestimonial].imageName}.png")`
                       }}
                     />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900">{testimonials[currentTestimonial].name}</h4>
-                  <p className="text-gray-600">{testimonials[currentTestimonial].age} anos</p>
-                  <p className="text-cyan-600 font-semibold mt-2">{testimonials[currentTestimonial].result}</p>
+                  <h4 className="text-xl font-bold text-gray-900">
+                    {testimonials[currentTestimonial].name}
+                  </h4>
+                  <p className="text-gray-600">
+                    {testimonials[currentTestimonial].age} anos
+                  </p>
+                  <p className="text-cyan-600 font-semibold mt-2">
+                    {testimonials[currentTestimonial].result}
+                  </p>
                 </div>
 
                 {/* Depoimento */}
@@ -137,7 +146,7 @@ export default function TestimonialsSection() {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentTestimonial ? 'bg-cyan-500' : 'bg-gray-300'
+                    index === currentTestimonial ? "bg-cyan-500" : "bg-gray-300"
                   }`}
                 />
               ))}

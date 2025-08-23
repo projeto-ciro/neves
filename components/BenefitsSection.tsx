@@ -6,26 +6,28 @@ import React from "react";
 
 const containerVariants = {
   off: { opacity: 0, y: 20 },
-  on:  { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  on: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const itemVariants = {
   off: { opacity: 0, y: 20 },
-  on:  { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  on: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 export default function BenefitsSection() {
-  // Acessibilidade: se o usuário prefere menos animação, não animamos
   const reduce = useReducedMotion();
 
-  // Para evitar qualquer “sumiço” caso o observer falhe, podemos optar por
-  // não iniciar em opacity:0 quando reduce === true
   const initialState = reduce ? undefined : "off";
   const whileInViewState = reduce ? undefined : "on";
-  const viewport = reduce ? undefined : { once: true, amount: 0.2, margin: "0px 0px -10% 0px" };
+  const viewport = reduce
+    ? undefined
+    : { once: true, amount: 0.2, margin: "0px 0px -10% 0px" };
 
   return (
-    <section id="beneficios" className="py-20 bg-white">
+    <section
+      id="beneficios"
+      className="pt-6 md:pt-12 pb-10 md:pb-20 bg-white"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
@@ -34,11 +36,8 @@ export default function BenefitsSection() {
           viewport={viewport}
           className="grid lg:grid-cols-2 gap-16 items-center"
         >
-          {/* Imagem */}
-          <motion.div
-            variants={itemVariants}
-            className="relative"
-          >
+          {/* Imagem SEM blur */}
+          <motion.div variants={itemVariants} className="relative">
             <div className="rounded-2xl overflow-hidden relative w-full h-[480px] md:h-[550px]">
               <Image
                 src="/images/modelo-page1.png"
@@ -48,12 +47,7 @@ export default function BenefitsSection() {
                 className="object-cover"
                 priority={false}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20" />
             </div>
-
-            {/* Elementos decorativos */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-cyan-400 rounded-full opacity-20 blur-xl" />
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500 rounded-full opacity-20 blur-xl" />
           </motion.div>
 
           {/* Conteúdo */}
@@ -78,7 +72,8 @@ export default function BenefitsSection() {
                           Mais Energia e Disposição
                         </h4>
                         <p className="text-[clamp(0.875rem,2vw,1.125rem)] text-gray-600">
-                          Sinta-se revigorado(a) e com energia para aproveitar cada momento do seu dia
+                          Sinta-se revigorado(a) e com energia para aproveitar
+                          cada momento do seu dia
                         </p>
                       </div>
                     </div>
@@ -99,7 +94,8 @@ export default function BenefitsSection() {
                           Autoestima Elevada
                         </h4>
                         <p className="text-[clamp(0.875rem,2vw,1.125rem)] text-gray-600">
-                          Recupere a confiança em si mesmo(a) e se sinta bem com seu corpo novamente
+                          Recupere a confiança em si mesmo(a) e se sinta bem com
+                          seu corpo novamente
                         </p>
                       </div>
                     </div>
@@ -120,7 +116,8 @@ export default function BenefitsSection() {
                           Resultados Duradouros
                         </h4>
                         <p className="text-[clamp(0.875rem,2vw,1.125rem)] text-gray-600">
-                          Mantenha seu peso ideal sem efeito sanfona, com mudanças sustentáveis
+                          Mantenha seu peso ideal sem efeito sanfona, com
+                          mudanças sustentáveis
                         </p>
                       </div>
                     </div>
@@ -141,7 +138,8 @@ export default function BenefitsSection() {
                           Saúde em Primeiro Lugar
                         </h4>
                         <p className="text-[clamp(0.875rem,2vw,1.125rem)] text-gray-600">
-                          Melhore seus exames, durma melhor e tenha uma vida mais saudável
+                          Melhore seus exames, durma melhor e tenha uma vida
+                          mais saudável
                         </p>
                       </div>
                     </div>
