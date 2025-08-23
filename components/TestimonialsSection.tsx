@@ -17,34 +17,38 @@ export default function TestimonialsSection() {
       name: "Maria Silva",
       age: 45,
       result: "Perdeu 12kg em 21 dias",
-      text: "Nunca pensei que fosse possível emagrecer de forma tão natural após os 40. O programa do Ciro mudou completamente minha relação com a comida e meu corpo.",
+      text:
+        "Nunca pensei que fosse possível emagrecer de forma tão natural após os 40. O programa do Ciro mudou completamente minha relação com a comida e meu corpo.",
       rating: 5,
-      imageName: "maria-silva"
+      imageName: "maria-silva",
     },
     {
       name: "Ana Costa",
       age: 52,
       result: "Perdeu 8kg e ganhou energia",
-      text: "Estava sem energia há anos. Com o programa, não só emagreci como recuperei minha disposição. Me sinto 10 anos mais jovem!",
+      text:
+        "Estava sem energia há anos. Com o programa, não só emagreci como recuperei minha disposição. Me sinto 10 anos mais jovem!",
       rating: 5,
-      imageName: "ana-costa"
+      imageName: "ana-costa",
     },
     {
       name: "Carla Santos",
       age: 48,
       result: "Perdeu 15kg em 2 meses",
-      text: "O melhor de tudo é que não sinto que estou fazendo dieta. É um estilo de vida que realmente funciona e que consigo manter.",
+      text:
+        "O melhor de tudo é que não sinto que estou fazendo dieta. É um estilo de vida que realmente funciona e que consigo manter.",
       rating: 5,
-      imageName: "carla-santos"
+      imageName: "carla-santos",
     },
     {
       name: "Lucia Oliveira",
       age: 43,
       result: "Perdeu 10kg e melhorou os exames",
-      text: "Além de emagrecer, meus exames melhoraram muito. Meu médico ficou impressionado com os resultados em tão pouco tempo.",
+      text:
+        "Além de emagrecer, meus exames melhoraram muito. Meu médico ficou impressionado com os resultados em tão pouco tempo.",
       rating: 5,
-      imageName: "lucia"
-    }
+      imageName: "lucia",
+    },
   ];
 
   const nextTestimonial = () => {
@@ -52,7 +56,9 @@ export default function TestimonialsSection() {
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   return (
@@ -78,7 +84,8 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto"
           >
-            Mais de 2.000 pessoas já transformaram suas vidas. Veja alguns depoimentos reais
+            Mais de 2.000 pessoas já transformaram suas vidas.
+            <span className="block">Veja alguns depoimentos</span>
           </motion.p>
         </div>
 
@@ -98,7 +105,7 @@ export default function TestimonialsSection() {
                     <div
                       className="absolute inset-0 bg-cover bg-center"
                       style={{
-                        backgroundImage: `url("/images/profile-${testimonials[currentTestimonial].imageName}.png")`
+                        backgroundImage: `url("/images/profile-${testimonials[currentTestimonial].imageName}.png")`,
                       }}
                     />
                   </div>
@@ -116,9 +123,14 @@ export default function TestimonialsSection() {
                 {/* Depoimento */}
                 <div className="md:col-span-2 space-y-4">
                   <div className="flex space-x-1 mb-4">
-                    {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
+                    {[...Array(testimonials[currentTestimonial].rating)].map(
+                      (_, i) => (
+                        <Star
+                          key={i}
+                          className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                        />
+                      )
+                    )}
                   </div>
 
                   <blockquote className="text-lg text-gray-700 leading-relaxed italic">
@@ -146,7 +158,9 @@ export default function TestimonialsSection() {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentTestimonial ? "bg-cyan-500" : "bg-gray-300"
+                    index === currentTestimonial
+                      ? "bg-cyan-500"
+                      : "bg-gray-300"
                   }`}
                 />
               ))}
