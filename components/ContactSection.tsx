@@ -20,7 +20,7 @@ export default function ContactSection() {
 
         {/* Botão WhatsApp */}
         <a
-          href="https://wa.me/5599999999999"
+          href="https://wa.me/5583999210852"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg shadow-md transition-colors duration-200"
@@ -32,10 +32,10 @@ export default function ContactSection() {
         <p className="mt-6 text-gray-500">
           Ou envie um email para{" "}
           <a
-            href="mailto:contato@seudominio.com"
+            href="mailto:cironevespersonal@gmail.com"
             className="text-blue-600 hover:underline"
           >
-            contato@seudominio.com
+            cironevespersonal@gmail.com
           </a>
         </p>
       </div>

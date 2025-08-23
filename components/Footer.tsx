@@ -12,7 +12,7 @@ export default function Footer() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/cironevespersonal", label: "Instagram" },
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Youtube, href: "#", label: "YouTube" },
   ];
@@ -67,7 +67,7 @@ export default function Footer() {
                 <div className="flex items-center gap-3">
                   <Mail size={18} />
                   <a href="mailto:cironevespersonal@gmail.com" className="hover:text-cyan-400">
-                    cironevespersonal@gmail.com
+cironevespersonal@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
