@@ -7,7 +7,7 @@ import { Section, Container } from "@/components/ui/section";
 import { DisplayTitle, Lead } from "@/components/ui/typography";
 
 const WHATSAPP_URL =
-  "https://wa.me/5511999999999?text=Quero%20participar%20do%20Desafio%20Voc%C3%AA%20%2B%20Magra";
+  "https://wa.me/5583999210852?text=Quero%20participar%20do%20Desafio%20Voc%C3%AA%20%2B%20Magra";
 
 export default function HeroSection() {
   return (
