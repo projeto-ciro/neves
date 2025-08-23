@@ -16,7 +16,7 @@ export default function MetabolicSection() {
     <section
       id="metodo"
       ref={ref}
-      className="pt-16 pb-6 md:py-20 bg-gradient-to-br from-gray-50 to-cyan-50"
+      className="scroll-mt-28 pt-16 pb-6 md:py-20 bg-gradient-to-br from-gray-50 to-cyan-50"
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -104,7 +104,7 @@ export default function MetabolicSection() {
                 asChild
               >
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  Quero Reprogramar Meu Metabolismo
+                  Conheça o Método
                 </a>
               </Button>
             </motion.div>

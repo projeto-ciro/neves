@@ -85,7 +85,7 @@ export default function AboutSection() {
                   rel="noopener noreferrer"
                   aria-label="Falar com Ciro no WhatsApp"
                 >
-                  Conheça o Método
+                  Confira agora
                 </a>
               </Button>
 
