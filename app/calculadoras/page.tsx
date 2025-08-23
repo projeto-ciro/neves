@@ -195,11 +195,11 @@ function CalcTMB({
           <label htmlFor="idade" className="mb-2 block text-sm font-medium text-white">
             Idade (anos)
           </label>
-          <Input 
-            id="idade" 
-            inputMode="numeric" 
-            placeholder="Ex.: 42" 
-            value={idade} 
+          <Input
+            id="idade"
+            inputMode="numeric"
+            placeholder="Ex.: 42"
+            value={idade}
             onChange={(e) => setIdade(e.target.value)}
             className="touch-target"
           />
@@ -208,11 +208,11 @@ function CalcTMB({
           <label htmlFor="peso" className="mb-2 block text-sm font-medium text-white">
             Peso (kg)
           </label>
-          <Input 
-            id="peso" 
-            inputMode="decimal" 
-            placeholder="Ex.: 72" 
-            value={peso} 
+          <Input
+            id="peso"
+            inputMode="decimal"
+            placeholder="Ex.: 72"
+            value={peso}
             onChange={(e) => setPeso(e.target.value)}
             className="touch-target"
           />
@@ -221,11 +221,11 @@ function CalcTMB({
           <label htmlFor="altura" className="mb-2 block text-sm font-medium text-white">
             Altura (cm)
           </label>
-          <Input 
-            id="altura" 
-            inputMode="decimal" 
-            placeholder="Ex.: 165" 
-            value={altura} 
+          <Input
+            id="altura"
+            inputMode="decimal"
+            placeholder="Ex.: 165"
+            value={altura}
             onChange={(e) => setAltura(e.target.value)}
             className="touch-target"
           />
@@ -241,7 +241,7 @@ function CalcTMB({
     >
       <Body className="text-white/70">Sua TMB estimada:</Body>
       <AnimatePresence mode="wait">
-        <motion.p 
+        <motion.p
           key={tmb}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -303,11 +303,11 @@ function CalcFC({
         <label htmlFor="idade-fc" className="mb-2 block text-sm font-medium text-white">
           Idade (anos)
         </label>
-        <Input 
-          id="idade-fc" 
-          inputMode="numeric" 
-          placeholder="Ex.: 42" 
-          value={idade} 
+        <Input
+          id="idade-fc"
+          inputMode="numeric"
+          placeholder="Ex.: 42"
+          value={idade}
           onChange={(e) => setIdade(e.target.value)}
           className="touch-target"
         />
@@ -323,7 +323,7 @@ function CalcFC({
       <div>
         <Body className="text-white/70">FC Máxima:</Body>
         <AnimatePresence mode="wait">
-          <motion.p 
+          <motion.p
             key={fcMax}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -335,7 +335,7 @@ function CalcFC({
           </motion.p>
         </AnimatePresence>
       </div>
-      
+
       {zonas && (
         <div className="space-y-2">
           <Body className="text-white/70 font-medium">Zonas de treino:</Body>
@@ -405,11 +405,11 @@ function CalcIMC({
           <label htmlFor="peso-imc" className="mb-2 block text-sm font-medium text-white">
             Peso (kg)
           </label>
-          <Input 
-            id="peso-imc" 
-            inputMode="decimal" 
-            placeholder="Ex.: 72" 
-            value={peso} 
+          <Input
+            id="peso-imc"
+            inputMode="decimal"
+            placeholder="Ex.: 72"
+            value={peso}
             onChange={(e) => setPeso(e.target.value)}
             className="touch-target"
           />
@@ -418,11 +418,11 @@ function CalcIMC({
           <label htmlFor="altura-imc" className="mb-2 block text-sm font-medium text-white">
             Altura (cm)
           </label>
-          <Input 
-            id="altura-imc" 
-            inputMode="decimal" 
-            placeholder="Ex.: 165" 
-            value={altura} 
+          <Input
+            id="altura-imc"
+            inputMode="decimal"
+            placeholder="Ex.: 165"
+            value={altura}
             onChange={(e) => setAltura(e.target.value)}
             className="touch-target"
           />
@@ -439,7 +439,7 @@ function CalcIMC({
       <div>
         <Body className="text-white/70">Seu IMC:</Body>
         <AnimatePresence mode="wait">
-          <motion.p 
+          <motion.p
             key={imc}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -451,7 +451,7 @@ function CalcIMC({
           </motion.p>
         </AnimatePresence>
       </div>
-      
+
       {categoria && (
         <div>
           <Body className="text-white/70">Categoria:</Body>
@@ -484,7 +484,7 @@ export default function CalculadorasPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-x-hidden">
       <Header />
-      
+
       {/* AUMENTADO o espaço abaixo do header */}
       <Section className="pt-28 sm:pt-32 lg:pt-36 relative overflow-hidden">
         {/* Background Pattern with gradient and noise */}

@@ -1,15 +1,18 @@
+// components/sections/BannerFraseBloco10.tsx
 "use client";
-import { Section, Container } from "@/components/ui/section";
-import { Title } from "@/components/ui/typography";
+
+import { Section } from "@/components/ui/section";
+import BannerFullBleed from "@/components/BannerFullBleed";
 
 export default function BannerFraseBloco10() {
   return (
-    <Section className="bg-gradient-to-r from-cyan-500 to-purple-600 py-16">
-      <Container className="text-center">
-        <Title className="text-white">
-          NÃO É SOBRE APENAS EMAGRECER, <br /> É SOBRE SE REENCONTRAR. <br /> COMECE AGORA.
-        </Title>
-      </Container>
+    <Section className="py-0 -mt-12">
+      <BannerFullBleed
+        src="/banner-1.png"
+        alt="NÃO É SOBRE APENAS EMAGRECER, É SOBRE SE REENCONTRAR. COMECE AGORA."
+        heightClass="h-[clamp(260px,40vw,620px)]" // altura um pouco maior também
+        flush
+      />
     </Section>
   );
 }

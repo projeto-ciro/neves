@@ -6,9 +6,10 @@ export default function VideoBloco03() {
   return (
     <Section>
       <Container>
-        <Subtitle className="text-center text-white mb-4">
+        <Subtitle className="text-center text-gray-900 mb-4">
           Dê um play neste vídeo
         </Subtitle>
+
         <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10">
           <iframe
             className="absolute inset-0 w-full h-full"

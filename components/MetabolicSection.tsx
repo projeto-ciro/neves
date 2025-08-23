@@ -39,7 +39,7 @@ export default function MetabolicSection() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-xl text-gray-600 leading-relaxed"
               >
-                Descubra como reativar seu metabolismo e voltar a queimar gordura 
+                Descubra como reativar seu metabolismo e voltar a queimar gordura
                 de forma natural, mesmo após os 40 anos.
               </motion.p>
 
@@ -86,8 +86,8 @@ export default function MetabolicSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-6"
               >
                 Quero Reprogramar Meu Metabolismo
@@ -103,7 +103,7 @@ export default function MetabolicSection() {
             className="relative"
           >
             <div className="aspect-video rounded-2xl overflow-hidden relative group cursor-pointer">
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                 backgroundImage: "url(\"/images/programacao-metabolica.png\")"
@@ -111,7 +111,7 @@ export default function MetabolicSection() {
               >
                 <div className="absolute inset-0 bg-black/50"></div>
               </div>
-              
+
               {/* Play button overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-20 h-20 bg-cyan-500 rounded-full flex items-center justify-center group-hover:bg-cyan-400 transition-colors">
