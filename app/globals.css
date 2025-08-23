@@ -45,11 +45,11 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #0b0b0b;
   --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
+  --card: #0b0b0b;
   --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
+  --popover: #0b0b0b;
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
@@ -121,23 +121,22 @@
   }
 }
 
-
 /* Utility classes for modern design */
 @layer utilities {
   .gradient-radial {
     background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
   }
-  
+
   .noise-texture {
-    background-image: 
+    background-image:
       radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
       radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
   }
-  
+
   .link-underline {
     position: relative;
   }
-  
+
   .link-underline::after {
     content: '';
     position: absolute;
@@ -148,14 +147,13 @@
     background: currentColor;
     transition: width 0.3s ease;
   }
-  
+
   .link-underline:hover::after {
     width: 100%;
   }
-  
+
   .touch-target {
     min-height: 44px;
     min-width: 44px;
   }
 }
-
