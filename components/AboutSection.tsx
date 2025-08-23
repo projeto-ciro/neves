@@ -11,7 +11,7 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre" ref={ref} className="py-20 bg-white">
+    <section id="sobre" ref={ref} className="pt-20 pb-10 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Imagem */}
@@ -78,7 +78,7 @@ export default function AboutSection() {
                 Conheça o Método
               </Button>
 
-              <div className="mt-2 md:mt-3 flex items-center space-x-4 text-sm text-gray-500">
+              <div className="mt-6 md:mt-8 flex items-center space-x-4 text-sm text-gray-500">
                 <div className="flex items-center space-x-1">
                   <span className="text-cyan-500">✓</span>
                   <span>Sem efeito sanfona</span>
