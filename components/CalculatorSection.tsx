@@ -76,8 +76,8 @@ export default function CalculatorSection() {
           </motion.p>
         </div>
 
-        {/* Cards mais compactos em todas telas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
+        {/* Cards mais compactos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 mb-8">
           {calculatorCards.map((card, index) => (
             <motion.div
               key={index}
@@ -85,30 +85,29 @@ export default function CalculatorSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
             >
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 rounded-lg h-full">
-                <CardContent className="p-3 md:p-4 flex flex-col items-center text-center h-full">
-                  {/* Imagem compacta */}
-                  <div className="relative w-full aspect-[5/4] rounded-md overflow-hidden mb-3">
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 rounded-lg h-full max-w-[260px] mx-auto">
+                <CardContent className="p-2 md:p-3 flex flex-col items-center text-center h-full">
+                  {/* Imagem menor */}
+                  <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden mb-2">
                     <Image
                       src={card.image}
                       alt={card.alt}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 20vw"
                       priority={index === 0}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   </div>
 
                   {/* Título menor */}
-                  <h3 className="text-sm md:text-base font-semibold text-white mb-1 min-h-[1.5rem] flex items-center justify-center">
+                  <h3 className="text-xs md:text-sm font-semibold text-white mb-1">
                     {card.title}
                   </h3>
 
                   {/* Texto menor */}
-                  <div className="text-gray-300 leading-snug space-y-0.5 min-h-[3.5rem] flex flex-col justify-center">
+                  <div className="text-gray-300 leading-snug space-y-0.5">
                     {card.lines.map((line, i) => (
-                      <p key={i} className="text-xs md:text-sm">
+                      <p key={i} className="text-[11px] md:text-xs">
                         {line}
                       </p>
                     ))}
@@ -128,7 +127,7 @@ export default function CalculatorSection() {
           <Button
             asChild
             size="sm"
-            className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold text-xs md:text-sm px-6 md:px-8 py-3 md:py-4 rounded-full"
+            className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold text-xs md:text-sm px-5 md:px-7 py-2.5 md:py-3 rounded-full"
           >
             <Link href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
               Eu Quero
