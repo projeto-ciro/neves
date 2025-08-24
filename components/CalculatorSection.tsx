@@ -11,7 +11,6 @@ export default function CalculatorSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Cada card com 3 linhas exatamente para padronizar a altura visual.
   const calculatorCards = [
     {
       title: "Avaliação Física",
@@ -55,14 +54,14 @@ export default function CalculatorSection() {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-gray-900 to-black">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+    <section ref={ref} className="py-10 md:py-14 bg-gradient-to-br from-gray-900 to-black">
+      <div className="container mx-auto px-3">
+        <div className="text-center mb-8 md:mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-2xl md:text-3xl font-bold text-white mb-2"
           >
             O que você vai receber <span className="text-cyan-400">na prática</span>
           </motion.h2>
@@ -71,14 +70,14 @@ export default function CalculatorSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-sm md:text-base text-gray-300 max-w-md mx-auto"
           >
             Detalhes dos benefícios inclusos:
           </motion.p>
         </div>
 
-        {/* 2 colunas no md, 4 colunas no lg */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        {/* Cards mais compactos em todas telas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
           {calculatorCards.map((card, index) => (
             <motion.div
               key={index}
@@ -86,11 +85,10 @@ export default function CalculatorSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
             >
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 h-full">
-                {/* Layout interno padronizado e centralizado */}
-                <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                  {/* Imagem */}
-                  <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-6">
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 rounded-lg h-full">
+                <CardContent className="p-3 md:p-4 flex flex-col items-center text-center h-full">
+                  {/* Imagem compacta */}
+                  <div className="relative w-full aspect-[5/4] rounded-md overflow-hidden mb-3">
                     <Image
                       src={card.image}
                       alt={card.alt}
@@ -99,18 +97,18 @@ export default function CalculatorSection() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       priority={index === 0}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   </div>
 
-                  {/* Título com altura mínima para alinhar entre cards */}
-                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 min-h-[2.5rem] flex items-center justify-center">
+                  {/* Título menor */}
+                  <h3 className="text-sm md:text-base font-semibold text-white mb-1 min-h-[1.5rem] flex items-center justify-center">
                     {card.title}
                   </h3>
 
-                  {/* Bloco de três linhas, todas com o mesmo espaçamento */}
-                  <div className="text-gray-300 leading-relaxed space-y-1 min-h-[5.25rem] flex flex-col justify-center">
+                  {/* Texto menor */}
+                  <div className="text-gray-300 leading-snug space-y-0.5 min-h-[3.5rem] flex flex-col justify-center">
                     {card.lines.map((line, i) => (
-                      <p key={i} className="text-sm md:text-base">
+                      <p key={i} className="text-xs md:text-sm">
                         {line}
                       </p>
                     ))}
@@ -129,8 +127,8 @@ export default function CalculatorSection() {
         >
           <Button
             asChild
-            size="lg"
-            className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold text-lg px-12 py-6 rounded-full"
+            size="sm"
+            className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold text-xs md:text-sm px-6 md:px-8 py-3 md:py-4 rounded-full"
           >
             <Link href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
               Eu Quero

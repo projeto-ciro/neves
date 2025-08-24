@@ -41,7 +41,11 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="grid gap-10 md:grid-cols-3"
+            className="
+              grid gap-10 md:grid-cols-3
+              justify-items-center md:justify-items-start
+              text-center md:text-left
+            "
           >
             {/* Logo + descrição */}
             <div className="space-y-6">
@@ -49,19 +53,19 @@ export default function Footer() {
                 <Image
                   src="/images/logo-footer.png"
                   alt="Logo Ciro Neves"
-                  width={320}
-                  height={96}
-                  className="h-16 md:h-24 w-auto object-contain transition-transform hover:scale-105"
+                  width={260}
+                  height={80}
+                  className="h-14 md:h-20 w-auto object-contain transition-transform hover:scale-105 mx-auto md:mx-0"
                   priority
                 />
               </Link>
 
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="text-white/70 text-sm leading-relaxed max-w-sm">
                 Especialista em emagrecimento saudável para pessoas acima de 40 anos.
                 Transformando vidas através da reprogramação metabólica.
               </p>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 justify-center md:justify-start">
                 {socialLinks.map(({ icon: Icon, href, label, external }) =>
                   external ? (
                     <a
@@ -92,7 +96,7 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="font-semibold text-lg">Contato</h4>
               <div className="space-y-3 text-white/80 text-sm">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 justify-center md:justify-start">
                   <Mail size={18} />
                   <a
                     href="mailto:cironevespersonal@gmail.com"
@@ -101,13 +105,13 @@ export default function Footer() {
                     cironevespersonal@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 justify-center md:justify-start">
                   <Phone size={18} />
                   <a href="tel:+5583999210852" className="hover:text-cyan-400">
                     (83) 9 9921-0852
                   </a>
                 </div>
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 justify-center md:justify-start">
                   <MapPin size={18} className="mt-1" />
                   <address className="not-italic">
                     Rua Severino Alves Aires, nº 357, Miramar
@@ -121,7 +125,7 @@ export default function Footer() {
             {/* Links rápidos */}
             <div className="space-y-4">
               <h4 className="font-semibold text-lg">Links</h4>
-              <div className="grid grid-cols-2 gap-3 text-sm text-white/80">
+              <div className="grid grid-cols-2 gap-3 text-sm text-white/80 justify-items-center md:justify-items-start">
                 <Link href="/#inicio" className="hover:text-cyan-400 transition-colors">
                   Início
                 </Link>
@@ -142,7 +146,7 @@ export default function Footer() {
                 </Link>
               </div>
 
-              <div className="pt-4 text-xs text-white/60 space-x-4">
+              <div className="pt-4 text-xs text-white/60 flex flex-wrap gap-4 justify-center md:justify-start">
                 <Link
                   href="/politica-de-privacidade"
                   className="hover:text-cyan-400 transition-colors link-underline"

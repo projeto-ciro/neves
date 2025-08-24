@@ -29,9 +29,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            /* centralizado no mobile e também no desktop */
+            className="space-y-6 flex flex-col items-center text-center lg:items-center lg:text-center"
           >
-            <div className="space-y-4">
+            <div className="space-y-4 w-full">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -51,7 +52,8 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
               >
-                <Lead className="text-gray-300 max-w-lg">
+                {/* limite de largura e centralização em todas as telas */}
+                <Lead className="text-gray-300 mx-auto max-w-[28rem]">
                   Transforme seu corpo e sua vida com o método comprovado de reprogramação
                   metabólica
                 </Lead>
@@ -62,7 +64,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="space-y-4"
+              className="space-y-5 w-full flex flex-col items-center"
             >
               <Button
                 variant="cta"
@@ -80,7 +82,8 @@ export default function HeroSection() {
                 </a>
               </Button>
 
-              <div className="flex items-center space-x-3 text-sm text-gray-400">
+              {/* bolinhas embaixo do botão + legenda centralizadas */}
+              <div className="flex flex-col items-center gap-2">
                 <div className="flex -space-x-2" aria-hidden>
                   {[1, 2, 3, 4, 5].map((i) => (
                     <div
@@ -89,12 +92,14 @@ export default function HeroSection() {
                     />
                   ))}
                 </div>
-                <span>+2.000 pessoas já transformaram suas vidas</span>
+                <span className="text-sm text-gray-400">
+                  +2.000 pessoas já transformaram suas vidas
+                </span>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* imagem do Ciro — mostrar 100% da arte (sem corte) */}
+          {/* imagem do Ciro — mostra 100% da arte (sem corte) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -107,7 +112,7 @@ export default function HeroSection() {
                   src="/images/ciro.png"
                   alt="Ciro Neves - Personal Trainer e Especialista em Emagrecimento"
                   fill
-                  className="object-contain"  /* ← mostra a imagem inteira com a borda */
+                  className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
                 />

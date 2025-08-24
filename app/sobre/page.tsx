@@ -27,7 +27,9 @@ export default function SobrePage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600">
-                  <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">Conheça meu Método</a>
+                  <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
+                    Conheça meu Método
+                  </a>
                 </Button>
                 <Button
                   asChild
@@ -35,7 +37,9 @@ export default function SobrePage() {
                   variant="outline"
                   className="border-cyan-500 text-cyan-500 hover:bg-cyan-500/10"
                 >
-                  <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">Entre em Contato</a>
+                  <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
+                    Entre em Contato
+                  </a>
                 </Button>
               </div>
             </div>
@@ -84,63 +88,68 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Metodologia Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      {/* Metodologia Section (compacta com imagem menor) */}
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-12">
             Minha <span className="text-cyan-500">Metodologia</span>
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-cyan-500">1</span>
+          <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+            {/* Card 1 */}
+            <div className="bg-white p-4 md:p-5 rounded-lg shadow hover:shadow-md transition-shadow">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-cyan-500/15 rounded-full flex items-center justify-center mb-4">
+                <span className="text-base md:text-lg font-bold text-cyan-600">1</span>
               </div>
-              <h3 className="text-xl font-bold mb-4">Análise Metabólica</h3>
-              <p className="text-gray-600">
+              <h3 className="text-base md:text-lg font-semibold mb-2">Análise Metabólica</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Avaliação completa do seu metabolismo, histórico de saúde e hábitos alimentares
                 para identificar os bloqueios metabólicos que impedem o emagrecimento.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-cyan-500">2</span>
+            {/* Card 2 */}
+            <div className="bg-white p-4 md:p-5 rounded-lg shadow hover:shadow-md transition-shadow">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-cyan-500/15 rounded-full flex items-center justify-center mb-4">
+                <span className="text-base md:text-lg font-bold text-cyan-600">2</span>
               </div>
-              <h3 className="text-xl font-bold mb-4">Plano Personalizado</h3>
-              <p className="text-gray-600">
+              <h3 className="text-base md:text-lg font-semibold mb-2">Plano Personalizado</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Desenvolvimento de um plano alimentar e de atividades físicas totalmente
                 personalizado, respeitando suas preferências e necessidades específicas.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-cyan-500">3</span>
+            {/* Card 3 */}
+            <div className="bg-white p-4 md:p-5 rounded-lg shadow hover:shadow-md transition-shadow">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-cyan-500/15 rounded-full flex items-center justify-center mb-4">
+                <span className="text-base md:text-lg font-bold text-cyan-600">3</span>
               </div>
-              <h3 className="text-xl font-bold mb-4">Acompanhamento Contínuo</h3>
-              <p className="text-gray-600">
+              <h3 className="text-base md:text-lg font-semibold mb-2">Acompanhamento Contínuo</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Ajustes semanais e monitoramento de métricas para garantir consistência,
                 segurança e previsibilidade dos resultados.
               </p>
             </div>
           </div>
 
-          {/* === IMAGEM AJUSTADA (ficava enorme) === */}
-          <div className="mt-16 max-w-[800px] mx-auto rounded-2xl overflow-hidden shadow-lg">
+          {/* Imagem reduzida (500px no desktop) */}
+          <div className="mt-12 md:mt-14 max-w-[500px] mx-auto rounded-lg overflow-hidden shadow-md">
             <Image
               src="/images/transformation-results.png"
               alt="Resultados e acompanhamento"
-              width={800}
-              height={400}
-              className="h-auto rounded-2xl mx-auto"
-              sizes="(max-width: 768px) 100vw, 800px"
+              width={500}
+              height={280}
+              className="h-auto rounded-lg mx-auto"
+              sizes="(max-width: 768px) 100vw, 500px"
             />
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600">
-              <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">Participe do Desafio</a>
+              <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
+                Participe do Desafio
+              </a>
             </Button>
           </div>
         </div>
@@ -206,12 +215,14 @@ export default function SobrePage() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Pronto para começar?
           </h2>
-        <p className="text-lg text-gray-600 mt-4">
+          <p className="text-lg text-gray-600 mt-4">
             Vamos construir um plano direto ao ponto para você voltar a se sentir bem no próprio corpo.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600">
-              <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">Eu Quero</a>
+              <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
+                Eu Quero
+              </a>
             </Button>
             <Button
               asChild

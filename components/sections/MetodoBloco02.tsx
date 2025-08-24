@@ -8,9 +8,10 @@ const WHATSAPP_URL =
 
 export default function MetodoBloco02() {
   return (
-    <Section id="bloco-02-metodo" className="scroll-mt-28">
+    // ZERA padding da seção do título
+    <Section id="bloco-02-metodo" className="scroll-mt-28 py-0 md:py-0">
       <Container>
-        <Title className="text-gray-900">
+        <Title className="text-gray-900 m-0">
           Emagrecimento rápido e saudável{" "}
           <span className="text-cyan-700">após os 40</span>
         </Title>

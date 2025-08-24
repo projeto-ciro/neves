@@ -36,7 +36,7 @@ export default function BenefitsSection() {
           viewport={viewport}
           className="grid lg:grid-cols-2 gap-16 items-center"
         >
-          {/* Imagem — aumentada para dar mais destaque */}
+          {/* Imagem */}
           <motion.div variants={itemVariants} className="relative">
             <div className="relative w-full h-[480px] md:h-[560px] rounded-2xl overflow-hidden">
               <Image
@@ -51,31 +51,28 @@ export default function BenefitsSection() {
           </motion.div>
 
           {/* Conteúdo */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-6 md:space-y-6 lg:space-y-5">
             <motion.div variants={itemVariants}>
-              <h2 className="font-bold tracking-tight text-[clamp(1.875rem,4vw,3rem)] text-gray-900">
+              <h2 className="font-bold tracking-tight text-[clamp(1.75rem,3vw,2.25rem)] text-gray-900">
                 Benefícios do <span className="text-cyan-500">Programa</span>
               </h2>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="space-y-6">
+            <motion.div variants={itemVariants} className="space-y-4 md:space-y-5">
               {/* Card 1 */}
               <motion.div variants={itemVariants}>
-                <div className="border rounded-xl p-6 shadow-lg transition-all duration-300 hover:border-white/20 hover:shadow-xl bg-white/60 backdrop-blur-sm border-gray-200/50 hover:bg-white/80">
-                  <div className="flex-1">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 touch-target">
-                        <span className="text-white text-xl">⚡</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-[clamp(1.25rem,3vw,2rem)] text-gray-900 mb-2">
-                          Mais Energia e Disposição
-                        </h4>
-                        <p className="text-[clamp(0.875rem,2vw,1.125rem)] text-gray-600">
-                          Sinta-se revigorado(a) e com energia para aproveitar
-                          cada momento do seu dia
-                        </p>
-                      </div>
+                <div className="border rounded-lg p-5 md:p-3 shadow-md hover:shadow-lg bg-white/60 backdrop-blur-sm border-gray-200/50 hover:bg-white/80">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-10 h-10 md:w-8 md:h-8 bg-cyan-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-lg md:text-base">⚡</span>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-[clamp(1.1rem,2vw,1.35rem)] text-gray-900 mb-1">
+                        Mais Energia e Disposição
+                      </h4>
+                      <p className="text-[clamp(0.8rem,1.5vw,0.95rem)] text-gray-600 leading-snug">
+                        Sinta-se revigorado(a) e com energia para aproveitar cada momento do seu dia
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -83,21 +80,18 @@ export default function BenefitsSection() {
 
               {/* Card 2 */}
               <motion.div variants={itemVariants}>
-                <div className="border rounded-xl p-6 shadow-lg transition-all duration-300 hover:border-white/20 hover:shadow-xl bg-white/60 backdrop-blur-sm border-gray-200/50 hover:bg-white/80">
-                  <div className="flex-1">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 touch-target">
-                        <span className="text-white text-xl">💪</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-[clamp(1.25rem,3vw,2rem)] text-gray-900 mb-2">
-                          Autoestima Elevada
-                        </h4>
-                        <p className="text-[clamp(0.875rem,2vw,1.125rem)] text-gray-600">
-                          Recupere a confiança em si mesmo(a) e se sinta bem com
-                          seu corpo novamente
-                        </p>
-                      </div>
+                <div className="border rounded-lg p-5 md:p-3 shadow-md hover:shadow-lg bg-white/60 backdrop-blur-sm border-gray-200/50 hover:bg-white/80">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-10 h-10 md:w-8 md:h-8 bg-cyan-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-lg md:text-base">💪</span>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-[clamp(1.1rem,2vw,1.35rem)] text-gray-900 mb-1">
+                        Autoestima Elevada
+                      </h4>
+                      <p className="text-[clamp(0.8rem,1.5vw,0.95rem)] text-gray-600 leading-snug">
+                        Recupere a confiança em si mesmo(a) e se sinta bem com seu corpo novamente
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -105,21 +99,18 @@ export default function BenefitsSection() {
 
               {/* Card 3 */}
               <motion.div variants={itemVariants}>
-                <div className="border rounded-xl p-6 shadow-lg transition-all duration-300 hover:border-white/20 hover:shadow-xl bg-white/60 backdrop-blur-sm border-gray-200/50 hover:bg-white/80">
-                  <div className="flex-1">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 touch-target">
-                        <span className="text-white text-xl">🎯</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-[clamp(1.25rem,3vw,2rem)] text-gray-900 mb-2">
-                          Resultados Duradouros
-                        </h4>
-                        <p className="text-[clamp(0.875rem,2vw,1.125rem)] text-gray-600">
-                          Mantenha seu peso ideal sem efeito sanfona, com
-                          mudanças sustentáveis
-                        </p>
-                      </div>
+                <div className="border rounded-lg p-5 md:p-3 shadow-md hover:shadow-lg bg-white/60 backdrop-blur-sm border-gray-200/50 hover:bg-white/80">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-10 h-10 md:w-8 md:h-8 bg-cyan-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-lg md:text-base">🎯</span>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-[clamp(1.1rem,2vw,1.35rem)] text-gray-900 mb-1">
+                        Resultados Duradouros
+                      </h4>
+                      <p className="text-[clamp(0.8rem,1.5vw,0.95rem)] text-gray-600 leading-snug">
+                        Mantenha seu peso ideal sem efeito sanfona, com mudanças sustentáveis
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -127,21 +118,18 @@ export default function BenefitsSection() {
 
               {/* Card 4 */}
               <motion.div variants={itemVariants}>
-                <div className="border rounded-xl p-6 shadow-lg transition-all duration-300 hover:border-white/20 hover:shadow-xl bg-white/60 backdrop-blur-sm border-gray-200/50 hover:bg-white/80">
-                  <div className="flex-1">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 touch-target">
-                        <span className="text-white text-xl">❤️</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-[clamp(1.25rem,3vw,2rem)] text-gray-900 mb-2">
-                          Saúde em Primeiro Lugar
-                        </h4>
-                        <p className="text-[clamp(0.875rem,2vw,1.125rem)] text-gray-600">
-                          Melhore seus exames, durma melhor e tenha uma vida
-                          mais saudável
-                        </p>
-                      </div>
+                <div className="border rounded-lg p-5 md:p-3 shadow-md hover:shadow-lg bg-white/60 backdrop-blur-sm border-gray-200/50 hover:bg-white/80">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-10 h-10 md:w-8 md:h-8 bg-cyan-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-lg md:text-base">❤️</span>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-[clamp(1.1rem,2vw,1.35rem)] text-gray-900 mb-1">
+                        Saúde em Primeiro Lugar
+                      </h4>
+                      <p className="text-[clamp(0.8rem,1.5vw,0.95rem)] text-gray-600 leading-snug">
+                        Melhore seus exames, durma melhor e tenha uma vida mais saudável
+                      </p>
                     </div>
                   </div>
                 </div>
