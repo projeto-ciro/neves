@@ -71,12 +71,12 @@ export default function TestimonialsSection() {
       className="pt-8 md:pt-12 pb-16 bg-gradient-to-br from-gray-50 to-cyan-50"
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-14">
+        <div className="text-center mb-10 md:mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-3"
           >
             O que dizem <span className="text-cyan-500">nossas alunas</span>
           </motion.h2>
@@ -85,26 +85,26 @@ export default function TestimonialsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto"
           >
             Mais de 2.000 pessoas já transformaram suas vidas.
             <span className="block">Veja alguns depoimentos</span>
           </motion.p>
         </div>
 
-        {/* Carrossel de Depoimentos */}
+        {/* Carrossel de Depoimentos (mais compacto no desktop) */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative max-w-2xl md:max-w-3xl mx-auto"
+          className="relative max-w-lg md:max-w-xl lg:max-w-2xl mx-auto"
         >
-          <Card className="bg-white shadow-lg rounded-xl">
-            <CardContent className="p-5 md:p-6">
-              <div className="grid md:grid-cols-3 gap-5 md:gap-6 items-center">
+          <Card className="bg-white shadow-md rounded-xl">
+            <CardContent className="p-4 md:p-5">
+              <div className="grid md:grid-cols-3 gap-4 md:gap-5 items-center">
                 {/* Foto */}
                 <div className="text-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full overflow-hidden relative mb-3 ring-4 ring-cyan-500/20">
+                  <div className="w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 mx-auto rounded-full overflow-hidden relative mb-2.5 ring-4 ring-cyan-500/15">
                     <div
                       className="absolute inset-0 bg-cover bg-center"
                       style={{
@@ -112,18 +112,20 @@ export default function TestimonialsSection() {
                       }}
                     />
                   </div>
-                  <h4 className="text-base md:text-lg font-bold text-gray-900">
+                  <h4 className="text-sm md:text-base font-bold text-gray-900">
                     {testimonials[currentTestimonial].name}
                   </h4>
-                  <p className="text-gray-600 text-sm">{testimonials[currentTestimonial].age} anos</p>
-                  <p className="text-cyan-600 font-semibold mt-1 text-sm">
+                  <p className="text-gray-600 text-xs md:text-sm">
+                    {testimonials[currentTestimonial].age} anos
+                  </p>
+                  <p className="text-cyan-600 font-semibold mt-1 text-xs md:text-sm">
                     {testimonials[currentTestimonial].result}
                   </p>
                 </div>
 
                 {/* Depoimento */}
-                <div className="md:col-span-2 space-y-3">
-                  <div className="flex space-x-1 mb-2">
+                <div className="md:col-span-2 space-y-2.5">
+                  <div className="flex space-x-1 mb-1.5">
                     {[...Array(testimonials[currentTestimonial].rating)].map(
                       (_, i) => (
                         <Star
@@ -134,7 +136,7 @@ export default function TestimonialsSection() {
                     )}
                   </div>
 
-                  <blockquote className="text-sm md:text-base text-gray-700 leading-relaxed italic">
+                  <blockquote className="text-sm md:text-[15px] text-gray-700 leading-relaxed italic">
                     "{testimonials[currentTestimonial].text}"
                   </blockquote>
                 </div>
@@ -143,7 +145,7 @@ export default function TestimonialsSection() {
           </Card>
 
           {/* Controles */}
-          <div className="flex justify-center items-center mt-6 space-x-3">
+          <div className="flex justify-center items-center mt-5 space-x-3">
             <Button
               variant="outline"
               size="icon"
@@ -181,7 +183,7 @@ export default function TestimonialsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mt-10"
+          className="text-center mt-8"
         >
           <Button
             size="lg"

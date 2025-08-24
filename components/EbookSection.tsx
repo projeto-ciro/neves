@@ -5,7 +5,6 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 
 export default function EbookSection() {
@@ -13,10 +12,13 @@ export default function EbookSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-cyan-500 to-blue-600">
-      <div className="container mx-auto px-4">
+    <section
+      ref={ref}
+      className="py-20 bg-gradient-to-br from-cyan-500 to-blue-600"
+    >
+      <div className="container mx-auto px-4 scale-100 md:scale-90 lg:scale-80">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-          {/* Capa do Ebook — MAIOR no mobile */}
+          {/* Capa do Ebook */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -64,11 +66,14 @@ export default function EbookSection() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-xl text-white/90 leading-relaxed"
               >
-                <strong>Eu preparei um material muito especial para você!</strong>
+                <strong>
+                  Eu preparei um material muito especial para você!
+                </strong>
                 <br />
                 <br />
-                Um guia completo com os primeiros passos para reativar seu metabolismo
-                e começar a emagrecer de forma saudável após os 40 anos.
+                Um guia completo com os primeiros passos para reativar seu
+                metabolismo e começar a emagrecer de forma saudável após os 40
+                anos.
               </motion.p>
 
               <motion.div
@@ -107,7 +112,11 @@ export default function EbookSection() {
                 size="lg"
                 className="bg-black hover:bg-gray-800 text-white font-bold py-6 text-lg"
               >
-                <a href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/5583999210852"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Baixar Ebook Gratuito
                 </a>
               </Button>

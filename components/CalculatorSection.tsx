@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
+import { Dumbbell, Utensils, ClipboardCheck, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -13,111 +13,92 @@ export default function CalculatorSection() {
 
   const calculatorCards = [
     {
-      title: "Avaliação Física",
-      lines: [
-        "Avaliação física e metabólica",
-        "Modulação personalizada conforme seu perfil.",
-      ],
-      image: "/images/avaliacao_fisica.png",
-      alt: "Avaliação física e metabólica",
+      title: "Avaliação Completa",
+      desc: "Exames, medidas e análise metabólica para personalizar o seu plano.",
+      icon: ClipboardCheck,
     },
     {
-      title: "Plano de treino",
-      lines: [
-        "Acesso ao app Personal,",
-        "vídeos com execução correta",
-        "e planilha + reavaliação.",
-      ],
-      image: "/images/plano_treino.png",
-      alt: "Plano de treino com aplicativo",
+      title: "Treino Inteligente",
+      desc: "Protocolos práticos com vídeos explicativos e ajustes constantes.",
+      icon: Dumbbell,
     },
     {
-      title: "Plano alimentar",
-      lines: [
-        "Guia de alimentação,",
-        "hidratação e higiene do sono,",
-        "organização e lista de compras.",
-      ],
-      image: "/images/plano_alimentar.png",
-      alt: "Plano alimentar e lista de compras",
+      title: "Plano Alimentar",
+      desc: "Estratégia de alimentação simples, lista de compras e rotina ajustada.",
+      icon: Utensils,
     },
     {
-      title: "Suporte Total",
-      lines: [
-        "Suporte diário no WhatsApp,",
-        "grupo exclusivo de alunas",
-        "e plantão de dúvidas e incentivo.",
-      ],
-      image: "/images/suporte_total.png",
-      alt: "Suporte total às alunas",
+      title: "Suporte Exclusivo",
+      desc: "Acompanhamento no WhatsApp, grupo motivacional e plantão de dúvidas.",
+      icon: Users,
     },
   ];
 
   return (
-    <section ref={ref} className="py-10 md:py-14 bg-gradient-to-br from-gray-900 to-black">
-      <div className="container mx-auto px-3">
-        <div className="text-center mb-8 md:mb-10">
+    <section
+      ref={ref}
+      className="py-14 md:py-20 bg-gradient-to-br from-gray-900 to-black"
+    >
+      <div className="container mx-auto px-4 scale-100 md:scale-90 lg:scale-85">
+        <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-2xl md:text-3xl font-bold text-white mb-2"
+            className="text-2xl md:text-4xl font-bold text-white mb-3"
           >
-            O que você vai receber <span className="text-cyan-400">na prática</span>
+            O que você vai receber{" "}
+            <span className="text-cyan-400">na prática</span>
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-sm md:text-base text-gray-300 max-w-md mx-auto"
+            className="text-base md:text-lg text-gray-300 max-w-xl mx-auto"
           >
-            Detalhes dos benefícios inclusos:
+            Resultados reais com acompanhamento completo e estratégico:
           </motion.p>
         </div>
 
-        {/* Cards mais compactos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 mb-8">
-          {calculatorCards.map((card, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-            >
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 rounded-lg h-full max-w-[260px] mx-auto">
-                <CardContent className="p-2 md:p-3 flex flex-col items-center text-center h-full">
-                  {/* Imagem menor */}
-                  <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden mb-2">
-                    <Image
-                      src={card.image}
-                      alt={card.alt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 20vw"
-                      priority={index === 0}
-                    />
-                  </div>
+        {/* Grid de cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 items-stretch">
+          {calculatorCards.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.2 + index * 0.15 }}
+                className="flex"
+              >
+                <div className="rounded-2xl p-[2px] bg-gradient-to-br from-cyan-500/40 via-cyan-400/20 to-transparent flex-1">
+                  <Card className="h-full bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-2xl flex flex-col transition-all duration-500 hover:scale-[1.03] hover:shadow-xl hover:shadow-cyan-500/20">
+                    <CardContent className="p-6 flex flex-col text-center items-center flex-1">
+                      {/* Ícone */}
+                      <div className="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 mb-4">
+                        <Icon className="w-7 h-7" />
+                      </div>
 
-                  {/* Título menor */}
-                  <h3 className="text-xs md:text-sm font-semibold text-white mb-1">
-                    {card.title}
-                  </h3>
+                      {/* Título */}
+                      <h3 className="text-lg font-semibold text-white mb-3">
+                        {card.title}
+                      </h3>
 
-                  {/* Texto menor */}
-                  <div className="text-gray-300 leading-snug space-y-0.5">
-                    {card.lines.map((line, i) => (
-                      <p key={i} className="text-[11px] md:text-xs">
-                        {line}
+                      {/* Descrição */}
+                      <p className="text-sm text-gray-300 leading-relaxed flex-1">
+                        {card.desc}
                       </p>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                    </CardContent>
+                  </Card>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -126,11 +107,15 @@ export default function CalculatorSection() {
         >
           <Button
             asChild
-            size="sm"
-            className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold text-xs md:text-sm px-5 md:px-7 py-2.5 md:py-3 rounded-full"
+            size="lg"
+            className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold px-8 py-4 rounded-full text-base md:text-lg"
           >
-            <Link href="https://wa.me/5583999210852" target="_blank" rel="noopener noreferrer">
-              Eu Quero
+            <Link
+              href="https://wa.me/5583999210852"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quero meu Plano Agora
             </Link>
           </Button>
         </motion.div>

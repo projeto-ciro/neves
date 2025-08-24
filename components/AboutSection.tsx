@@ -15,7 +15,8 @@ export default function AboutSection() {
 
   return (
     <section id="sobre" ref={ref} className="pt-20 pb-10 bg-white">
-      <div className="container mx-auto px-4">
+      {/* escala normal no mobile, reduzida no desktop */}
+      <div className="container mx-auto px-4 scale-100 md:scale-90">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Imagem */}
           <motion.div
@@ -62,9 +63,10 @@ export default function AboutSection() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-lg text-gray-600 leading-relaxed"
               >
-                Após os 40 anos, nosso metabolismo muda drasticamente. O que funcionava antes,
-                não funciona mais. Por isso desenvolvi um método específico que trabalha com
-                a reprogramação metabólica, respeitando as necessidades do seu corpo nesta fase da vida.
+                Após os 40 anos, nosso metabolismo muda drasticamente. O que
+                funcionava antes, não funciona mais. Por isso desenvolvi um
+                método específico que trabalha com a reprogramação metabólica,
+                respeitando as necessidades do seu corpo nesta fase da vida.
               </motion.p>
             </div>
 
@@ -74,6 +76,7 @@ export default function AboutSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="space-y-6 md:space-y-8"
             >
+              {/* botão voltou ao alinhamento padrão */}
               <Button
                 size="lg"
                 className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-6"

@@ -13,7 +13,7 @@ export default function HeroSection() {
   return (
     <Section
       id="inicio"
-      className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-20"
+      className="min-h-[85vh] bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-16"
     >
       {/* fundos decorativos */}
       <div className="absolute inset-0 gradient-radial" />
@@ -22,14 +22,13 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]" />
       </div>
 
-      <Container className="relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-10rem)]">
+      <Container className="relative z-10 scale-95">
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(85vh-8rem)]">
           {/* texto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            /* centralizado no mobile e também no desktop */
             className="space-y-6 flex flex-col items-center text-center lg:items-center lg:text-center"
           >
             <div className="space-y-4 w-full">
@@ -52,7 +51,6 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
               >
-                {/* limite de largura e centralização em todas as telas */}
                 <Lead className="text-gray-300 mx-auto max-w-[28rem]">
                   Transforme seu corpo e sua vida com o método comprovado de reprogramação
                   metabólica
@@ -82,7 +80,6 @@ export default function HeroSection() {
                 </a>
               </Button>
 
-              {/* bolinhas embaixo do botão + legenda centralizadas */}
               <div className="flex flex-col items-center gap-2">
                 <div className="flex -space-x-2" aria-hidden>
                   {[1, 2, 3, 4, 5].map((i) => (
@@ -99,15 +96,21 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* imagem do Ciro — mostra 100% da arte (sem corte) */}
+          {/* imagem do Ciro */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             className="relative"
           >
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="relative h-[55vh] sm:h-auto sm:aspect-[3/4] rounded-2xl overflow-hidden">
+            <div
+              className="
+                relative w-full max-w-md mx-auto
+                transform -translate-y-16 sm:-translate-y-20 md:translate-y-0
+                lg:max-w-lg lg:-translate-x-14 xl:-translate-x-20
+              "
+            >
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
                 <Image
                   src="/images/ciro.png"
                   alt="Ciro Neves - Personal Trainer e Especialista em Emagrecimento"
@@ -119,8 +122,8 @@ export default function HeroSection() {
               </div>
 
               {/* decorativos */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-cyan-400 rounded-full opacity-20 blur-xl" />
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500 rounded-full opacity-20 blur-xl" />
+              <div className="pointer-events-none absolute -top-4 -right-4 w-20 h-20 bg-cyan-400 rounded-full opacity-20 blur-xl" />
+              <div className="pointer-events-none absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500 rounded-full opacity-20 blur-xl" />
             </div>
           </motion.div>
         </div>
