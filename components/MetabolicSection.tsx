@@ -6,6 +6,10 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const WHATSAPP_URL = "https://wa.me/5583999210852";
+// Lê a URL pública do vídeo do Vercel Blob (defina NEXT_PUBLIC_VIDEO_URL no .env.local).
+// Fallback local para dev se você mantiver o arquivo em public/videos/.
+const VIDEO_URL =
+  process.env.NEXT_PUBLIC_VIDEO_URL || "/videos/boas-vindas.mp4";
 
 export default function MetabolicSection() {
   const ref = useRef(null);
@@ -118,8 +122,10 @@ export default function MetabolicSection() {
           >
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
               <video
-                src="/videos/boas-vindas.mp4"
+                src={VIDEO_URL}
                 controls
+                playsInline
+                preload="metadata"
                 poster="/images/video-thumb.png"
                 className="w-full h-full object-cover"
               />
