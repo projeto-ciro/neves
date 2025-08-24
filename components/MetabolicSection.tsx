@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Play } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/5583999210852";
 
@@ -110,30 +109,20 @@ export default function MetabolicSection() {
             </motion.div>
           </motion.div>
 
-          {/* Vídeo/Imagem */}
+          {/* Vídeo */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-video rounded-2xl overflow-hidden relative group cursor-pointer">
-              <div
-                className="absolute inset-0 z-10 flex items-center justify-center"
-                aria-hidden="true"
-              >
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-cyan-500/90 backdrop-blur-sm text-white flex items-center justify-center shadow-lg">
-                  <Play className="w-8 h-8 md:w-10 md:h-10" />
-                </div>
-              </div>
-
-              <img
-                src="/images/video-thumb.png"
-                alt="Vídeo sobre o método"
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <video
+                src="/videos/boas-vindas.mp4"
+                controls
+                poster="/images/video-thumb.png"
                 className="w-full h-full object-cover"
               />
-
-              <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           </motion.div>
         </div>
